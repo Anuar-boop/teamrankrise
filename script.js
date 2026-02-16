@@ -123,7 +123,7 @@
             var trackWidth = hscrollTrack.scrollWidth;
             var totalScroll = trackWidth - window.innerWidth;
 
-            gsap.to(hscrollTrack, {
+            var hscrollTween = gsap.to(hscrollTrack, {
                 x: function () { return -totalScroll; },
                 ease: 'none',
                 scrollTrigger: {
@@ -144,13 +144,12 @@
 
                 ScrollTrigger.create({
                     trigger: card,
-                    containerAnimation: gsap.utils.toArray(hscrollTrack.parentElement ? undefined : undefined),
+                    containerAnimation: hscrollTween,
                     start: 'left 80%',
                     onEnter: function () {
                         gsap.to(bars, { scaleY: 1, duration: 0.8, stagger: 0.1, ease: 'power2.out' });
                     },
-                    once: true,
-                    horizontal: true
+                    once: true
                 });
             });
         }
