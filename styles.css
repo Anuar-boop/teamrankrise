@@ -1585,6 +1585,14 @@ p:last-child { margin-bottom: 0; }
     transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
 
+/* Elements with dedicated GSAP animations (hidden until JS animates them) */
+.bento-cell,
+.timeline-step,
+.blog-card,
+.problem-headline,
+.problem-text,
+.problem-list { opacity: 0; }
+
 /* --- Stats Bar --- */
 .stats-bar {
     display: grid;
@@ -1713,6 +1721,24 @@ p:last-child { margin-bottom: 0; }
     .timeline-step { text-align: left; padding: 0 0 0 3.5rem; }
     .timeline-dot { margin: 0 0 1rem 0; position: absolute; left: 0; }
 
+    /* Horizontal scroll → vertical stack on mobile */
+    .hscroll-section { overflow: visible; }
+    .hscroll-track {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1.25rem;
+    }
+    .case-card {
+        flex: none;
+        width: 100%;
+    }
+    .hscroll-end {
+        flex: none;
+        width: 100%;
+        padding: 1rem 0;
+    }
+    .case-metrics { grid-template-columns: repeat(3, 1fr); }
+
     /* Blog */
     .blog-grid { grid-template-columns: 1fr; }
 
@@ -1762,7 +1788,13 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* --- noscript fallback --- */
-.no-js .reveal { opacity: 1; transform: none; }
+.no-js .reveal,
+.no-js .bento-cell,
+.no-js .timeline-step,
+.no-js .blog-card,
+.no-js .problem-headline,
+.no-js .problem-text,
+.no-js .problem-list { opacity: 1; transform: none; }
 
 /* --- Print --- */
 @media print {
@@ -1779,5 +1811,11 @@ p:last-child { margin-bottom: 0; }
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    .reveal { opacity: 1; transform: none; }
+    .reveal,
+    .bento-cell,
+    .timeline-step,
+    .blog-card,
+    .problem-headline,
+    .problem-text,
+    .problem-list { opacity: 1; transform: none; }
 }

@@ -14,7 +14,7 @@
         gsap.registerPlugin(ScrollTrigger);
         initAnimations();
     } else {
-        document.querySelectorAll('.reveal').forEach(function (el) {
+        document.querySelectorAll('.reveal, .bento-cell, .timeline-step, .blog-card, .problem-headline, .problem-text, .problem-list').forEach(function (el) {
             el.style.opacity = '1';
             el.style.transform = 'none';
         });
