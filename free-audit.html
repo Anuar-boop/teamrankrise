@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CACHE BUSTING: Force fresh content for mobile UI fixes (v2.1) -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="version" content="rankrise-v2.1-mobile-fixes">
+    <meta name="deployed" content="2026-02-16T08:50:00Z">
     <title>Free SEO Audit — See Your Score Instantly | RankRise</title>
     <meta name="description" content="Enter your website URL and get an instant SEO score. See exactly what's holding you back on Google — and what it could look like with RankRise.">
     <link rel="canonical" href="https://teamrankrise.com/free-audit.html">
@@ -573,7 +579,9 @@
         var apiBase = window.location.hostname === 'localhost' 
             ? '/api/audit' 
             : 'https://rankrise-audit-backend.onrender.com/api/audit';
-        var apiUrl = apiBase + '?url=' + encodeURIComponent(url);
+        // Cache-busting: force latest mobile UI fixes (v2.1)
+        var cacheToken = 'v=2.1-mobile-fixes-' + new Date().getTime();
+        var apiUrl = apiBase + '?url=' + encodeURIComponent(url) + '&' + cacheToken;
 
         showStep(1);
         updateLoadingStatus('Fetching page data...');

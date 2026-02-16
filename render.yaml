@@ -29,6 +29,28 @@ services:
     name: rankrise-website
     buildCommand: echo "Static site - no build needed"
     staticPublishPath: ./
+    headers:
+      - path: "/*"
+        name: "Cache-Control"
+        value: "no-cache, no-store, must-revalidate, max-age=0, public"
+      - path: "/*"
+        name: "Pragma"
+        value: "no-cache"
+      - path: "/*"
+        name: "Expires"
+        value: "0"
+      - path: "/*"
+        name: "X-Cache-Version"
+        value: "rankrise-v2.1-mobile-fixes-live"
+      - path: "/*"
+        name: "X-Deployed-At"
+        value: "2026-02-16T08:50:00Z"
+      - path: "/*.html"
+        name: "Content-Type"
+        value: "text/html; charset=utf-8"
+      - path: "/free-audit.html"
+        name: "Cache-Control"
+        value: "no-cache, no-store, must-revalidate, max-age=0"
     routes:
       - path: /api/*
         destination: rankrise-audit-backend
