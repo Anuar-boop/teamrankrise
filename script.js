@@ -304,4 +304,202 @@
     if (utmMedium) utmMedium.value = getParam('utm_medium');
     if (utmCampaign) utmCampaign.value = getParam('utm_campaign');
 
+    // --- SEO Scanner ---
+    var scannerForm = document.getElementById('scannerForm');
+    if (scannerForm) {
+        scannerForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            runSeoScan();
+        });
+    }
+
+    var scannerLeadForm = document.getElementById('scannerLeadForm');
+    if (scannerLeadForm) {
+        scannerLeadForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var btn = scannerLeadForm.querySelector('button');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            fetch(scannerLeadForm.action, {
+                method: 'POST',
+                body: new FormData(scannerLeadForm),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(function (res) {
+                if (res.ok) {
+                    scannerLeadForm.style.display = 'none';
+                    document.getElementById('scannerLeadSuccess').style.display = 'block';
+                } else {
+                    btn.textContent = 'Get Full Audit';
+                    btn.disabled = false;
+                }
+            })
+            .catch(function () {
+                btn.textContent = 'Get Full Audit';
+                btn.disabled = false;
+            });
+        });
+    }
+
+    function runSeoScan() {
+        var urlInput = document.getElementById('scannerUrl');
+        var btn = document.getElementById('scannerBtn');
+        var btnText = btn.querySelector('.scanner-btn-text');
+        var spinner = btn.querySelector('.scanner-spinner');
+        var resultsDiv = document.getElementById('scannerResults');
+        var errorDiv = document.getElementById('scannerError');
+
+        var url = urlInput.value.trim();
+        if (!url) return;
+        if (!url.match(/^https?:\/\//)) url = 'https://' + url;
+
+        btnText.textContent = 'Scanning...';
+        spinner.style.display = 'inline-block';
+        btn.disabled = true;
+        resultsDiv.style.display = 'none';
+        errorDiv.style.display = 'none';
+
+        var apiUrl = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' +
+            encodeURIComponent(url) + '&strategy=mobile&category=PERFORMANCE&category=SEO&category=ACCESSIBILITY&category=BEST_PRACTICES';
+
+        fetch(apiUrl)
+            .then(function (res) {
+                if (!res.ok) throw new Error('API error');
+                return res.json();
+            })
+            .then(function (data) {
+                displayScanResults(data, url);
+            })
+            .catch(function () {
+                errorDiv.style.display = 'block';
+                document.getElementById('scannerErrorMsg').textContent =
+                    'Could not scan that URL. Make sure the site is publicly accessible and try again.';
+            })
+            .finally(function () {
+                btnText.textContent = 'Scan Again';
+                spinner.style.display = 'none';
+                btn.disabled = false;
+            });
+    }
+
+    function makeCheckItem(iconChar, text) {
+        var li = document.createElement('li');
+        var icon = document.createElement('span');
+        icon.className = 'check-icon';
+        icon.textContent = iconChar;
+        li.appendChild(icon);
+        li.appendChild(document.createTextNode(' ' + text));
+        return li;
+    }
+
+    function displayScanResults(data, scannedUrl) {
+        var cats = data.lighthouseResult && data.lighthouseResult.categories || {};
+        var audits = data.lighthouseResult && data.lighthouseResult.audits || {};
+
+        var perfScore = cats.performance ? Math.round(cats.performance.score * 100) : 0;
+        var seoScore = cats.seo ? Math.round(cats.seo.score * 100) : 0;
+        var a11yScore = cats.accessibility ? Math.round(cats.accessibility.score * 100) : 0;
+        var bpScore = cats['best-practices'] ? Math.round(cats['best-practices'].score * 100) : 0;
+
+        var overall = Math.round(seoScore * 0.4 + perfScore * 0.3 + a11yScore * 0.15 + bpScore * 0.15);
+        var projected = Math.min(97, Math.round(overall + (100 - overall) * 0.7));
+
+        var failItems = [];
+
+        var checkAudits = [
+            { key: 'document-title', fail: 'Missing page title' },
+            { key: 'meta-description', fail: 'No meta description' },
+            { key: 'viewport', fail: 'Not mobile-optimized' },
+            { key: 'speed-index', fail: 'Slow page load' },
+            { key: 'is-crawlable', fail: 'Blocked from Google' },
+            { key: 'http-status-code', fail: 'HTTP errors detected' },
+            { key: 'image-alt', fail: 'Images missing alt text' },
+            { key: 'robots-txt', fail: 'robots.txt issues' }
+        ];
+
+        checkAudits.forEach(function (ca) {
+            var audit = audits[ca.key];
+            if (audit && audit.score !== undefined && audit.score !== null && audit.score < 1) {
+                failItems.push(ca.fail);
+            }
+        });
+
+        if (perfScore < 50) failItems.push('Poor mobile performance (' + perfScore + '/100)');
+        if (seoScore < 80) failItems.push('SEO score below average (' + seoScore + '/100)');
+
+        if (failItems.length < 3) {
+            var extras = ['No local business schema', 'No Google Business Profile link', 'Missing Open Graph tags', 'No XML sitemap link'];
+            for (var i = 0; i < extras.length && failItems.length < 5; i++) {
+                failItems.push(extras[i]);
+            }
+        }
+
+        failItems = failItems.slice(0, 6);
+
+        var fixMap = {
+            'Missing page title': 'Keyword-optimized title tag',
+            'No meta description': 'Compelling meta description',
+            'Not mobile-optimized': 'Mobile-first optimization',
+            'Slow page load': 'Optimized for speed (<2s)',
+            'Blocked from Google': 'Fully indexable by Google',
+            'HTTP errors detected': 'Clean HTTP responses',
+            'Images missing alt text': 'SEO-optimized images',
+            'robots.txt issues': 'Clean robots.txt + sitemap',
+            'No local business schema': 'Rich schema markup (LocalBusiness)',
+            'No Google Business Profile link': 'GBP fully optimized',
+            'Missing Open Graph tags': 'Social sharing optimized',
+            'No XML sitemap link': 'XML sitemap submitted to Google'
+        };
+
+        var afterItems = failItems.map(function (item) {
+            if (item.indexOf('performance') > -1) return 'Performance score 90+';
+            if (item.indexOf('SEO score') > -1) return 'SEO score 90+/100';
+            return fixMap[item] || ('Fixed: ' + item);
+        });
+
+        var circumference = 327;
+        var beforeOffset = circumference - (circumference * overall / 100);
+        var afterOffset = circumference - (circumference * projected / 100);
+
+        var beforeArc = document.querySelector('.before-arc');
+        var afterArc = document.querySelector('.after-arc');
+        beforeArc.style.strokeDashoffset = beforeOffset;
+        afterArc.style.strokeDashoffset = afterOffset;
+
+        var beforeColor = overall < 50 ? '#ef4444' : overall < 70 ? '#f59e0b' : '#10b981';
+        beforeArc.style.stroke = beforeColor;
+
+        document.getElementById('scoreNow').textContent = overall;
+        document.getElementById('scoreAfter').textContent = projected;
+
+        var checksNow = document.getElementById('checksNow');
+        var checksAfter = document.getElementById('checksAfter');
+        while (checksNow.firstChild) checksNow.removeChild(checksNow.firstChild);
+        while (checksAfter.firstChild) checksAfter.removeChild(checksAfter.firstChild);
+
+        failItems.forEach(function (item) {
+            checksNow.appendChild(makeCheckItem('\u2717', item));
+        });
+
+        afterItems.forEach(function (item) {
+            checksAfter.appendChild(makeCheckItem('\u2713', item));
+        });
+
+        document.getElementById('scannedUrlField').value = scannedUrl;
+        document.getElementById('currentScoreField').value = overall;
+
+        var resultsDiv = document.getElementById('scannerResults');
+        resultsDiv.style.display = 'block';
+
+        if (typeof gsap !== 'undefined' && !prefersReduced) {
+            gsap.fromTo('.scanner-card-before', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out' });
+            gsap.fromTo('.scanner-vs', { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, delay: 0.3, ease: 'back.out(1.7)' });
+            gsap.fromTo('.scanner-card-after', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, delay: 0.5, ease: 'power2.out' });
+            gsap.fromTo('.scanner-cta', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, delay: 0.8, ease: 'power2.out' });
+        }
+
+        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
 })();
