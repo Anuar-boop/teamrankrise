@@ -116,10 +116,9 @@
         if (hscrollSection && hscrollTrack && window.innerWidth > 768) {
             var cards = hscrollTrack.querySelectorAll('.case-card');
             var endLink = hscrollTrack.querySelector('.hscroll-end');
-            var totalItems = cards.length + (endLink ? 1 : 0);
-            var cardWidth = window.innerWidth * 0.8;
             var gap = 32;
-            var totalScroll = (totalItems * (cardWidth + gap)) - window.innerWidth + 80;
+            var trackWidth = hscrollTrack.scrollWidth;
+            var totalScroll = trackWidth - window.innerWidth;
 
             gsap.to(hscrollTrack, {
                 x: function () { return -totalScroll; },
