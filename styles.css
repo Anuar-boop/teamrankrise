@@ -1591,7 +1591,7 @@ p:last-child { margin-bottom: 0; }
 .blog-card,
 .problem-headline,
 .problem-text,
-.problem-list { opacity: 0; }
+.problem-list li { opacity: 0; }
 
 /* --- Stats Bar --- */
 .stats-bar {
@@ -1794,7 +1794,7 @@ p:last-child { margin-bottom: 0; }
 .no-js .blog-card,
 .no-js .problem-headline,
 .no-js .problem-text,
-.no-js .problem-list { opacity: 1; transform: none; }
+.no-js .problem-list li { opacity: 1; transform: none; }
 
 /* --- Print --- */
 @media print {
@@ -1817,5 +1817,5 @@ p:last-child { margin-bottom: 0; }
     .blog-card,
     .problem-headline,
     .problem-text,
-    .problem-list { opacity: 1; transform: none; }
+    .problem-list li { opacity: 1; transform: none; }
 }
