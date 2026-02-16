@@ -1,25 +1,22 @@
 /* ==========================================================================
-   RankRise SEO — Premium Interactions
-   GSAP animations, mobile menu, FAQ accordion, form handling, UTM tracking
+   RankRise SEO — Premium Interactions v2
+   GSAP scroll reveals, horizontal scroll, hero entrance, counters,
+   mobile menu, FAQ accordion, form handling, UTM tracking
    ========================================================================== */
 
 (function () {
     'use strict';
 
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     // --- GSAP Animations ---
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !prefersReduced) {
         gsap.registerPlugin(ScrollTrigger);
         initAnimations();
     } else {
-        // Fallback: show everything immediately
-        document.querySelectorAll('.fade-up').forEach(function (el) {
-            el.classList.add('visible');
-        });
-        document.querySelectorAll('.stagger-children').forEach(function (el) {
-            Array.from(el.children).forEach(function (child) {
-                child.style.opacity = '1';
-                child.style.transform = 'none';
-            });
+        document.querySelectorAll('.reveal').forEach(function (el) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
         });
     }
 
@@ -27,25 +24,19 @@
         // Hero entrance timeline
         var heroContent = document.querySelector('.hero-content');
         if (heroContent) {
-            var heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+            var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-            heroTl
-                .from('.hero-badge', { y: 20, opacity: 0, duration: 0.6 }, 0.2)
-                .from('.hero-title .line, .hero h1 .highlight, .hero h1', {
-                    y: 50, opacity: 0, duration: 0.9, stagger: 0.12
-                }, 0.3)
-                .from('.hero-subtitle', { y: 20, opacity: 0, duration: 0.7 }, 0.7)
-                .from('.hero-actions, .hero .btn-group', { y: 20, opacity: 0, duration: 0.6 }, 0.9)
-                .from('.hero-card', {
-                    x: 60, opacity: 0, rotateY: 5, duration: 1.1, ease: 'power2.out'
-                }, 0.5)
-                .from('.hero-stats .hero-stat', {
-                    y: 15, opacity: 0, stagger: 0.08, duration: 0.5
-                }, 1.0);
+            tl.from('.hero-label', { y: 20, opacity: 0, duration: 0.5 }, 0.1)
+              .from('.hero-content h1 .line', { y: 60, opacity: 0, duration: 0.9, stagger: 0.15 }, 0.2)
+              .from('.hero-subtitle', { y: 20, opacity: 0, duration: 0.7 }, 0.8)
+              .from('.hero-actions', { y: 20, opacity: 0, duration: 0.6 }, 1.0)
+              .from('.hero-card', { x: 80, opacity: 0, rotateY: 6, duration: 1.2, ease: 'power2.out' }, 0.4)
+              .from('.rank-item', { x: 30, opacity: 0, stagger: 0.1, duration: 0.5, ease: 'power2.out' }, 1.0)
+              .from('.chart-mini .bar', { scaleY: 0, stagger: 0.05, duration: 0.4, ease: 'power2.out', transformOrigin: 'bottom' }, 1.2);
         }
 
-        // Scroll-triggered fade-ups
-        gsap.utils.toArray('.fade-up').forEach(function (el) {
+        // Scroll-triggered reveals
+        gsap.utils.toArray('.reveal').forEach(function (el) {
             gsap.fromTo(el,
                 { y: 40, opacity: 0 },
                 {
@@ -59,26 +50,114 @@
             );
         });
 
-        // Stagger children (card grids, pain grid, steps)
-        gsap.utils.toArray('.stagger-children').forEach(function (container) {
-            var children = container.children;
-            gsap.set(children, { opacity: 0, y: 30 });
-            gsap.to(children, {
+        // Staggered bento cells
+        var bentoGrid = document.querySelector('.bento-grid');
+        if (bentoGrid) {
+            gsap.from('.bento-cell', {
                 scrollTrigger: {
-                    trigger: container,
-                    start: 'top 82%'
+                    trigger: bentoGrid,
+                    start: 'top 80%'
                 },
-                y: 0, opacity: 1, duration: 0.6, stagger: 0.12, ease: 'power2.out'
+                y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power2.out'
             });
-        });
+        }
 
-        // Counter animation
+        // Staggered timeline steps
+        var timeline = document.querySelector('.timeline');
+        if (timeline) {
+            gsap.from('.timeline-step', {
+                scrollTrigger: {
+                    trigger: timeline,
+                    start: 'top 80%'
+                },
+                y: 30, opacity: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out'
+            });
+        }
+
+        // Problem section — editorial text reveals
+        var problemContent = document.querySelector('.problem-content');
+        if (problemContent) {
+            gsap.from('.problem-headline', {
+                scrollTrigger: { trigger: problemContent, start: 'top 82%' },
+                y: 30, opacity: 0, duration: 0.8, ease: 'power2.out'
+            });
+            gsap.from('.problem-text', {
+                scrollTrigger: { trigger: problemContent, start: 'top 72%' },
+                y: 25, opacity: 0, duration: 0.7, stagger: 0.15, ease: 'power2.out'
+            });
+            gsap.from('.problem-list li', {
+                scrollTrigger: { trigger: '.problem-list', start: 'top 85%' },
+                x: -20, opacity: 0, duration: 0.5, stagger: 0.12, ease: 'power2.out'
+            });
+        }
+
+        // Blog cards stagger
+        var blogGrid = document.querySelector('.blog-grid');
+        if (blogGrid) {
+            gsap.from('.blog-card', {
+                scrollTrigger: { trigger: blogGrid, start: 'top 82%' },
+                y: 30, opacity: 0, duration: 0.6, stagger: 0.12, ease: 'power2.out'
+            });
+        }
+
+        // CTA box entrance
+        var ctaBox = document.querySelector('.cta-box');
+        if (ctaBox) {
+            gsap.from(ctaBox, {
+                scrollTrigger: { trigger: ctaBox, start: 'top 85%' },
+                y: 40, opacity: 0, duration: 0.9, ease: 'power2.out'
+            });
+        }
+
+        // --- Horizontal Scroll Pin (Results Section) ---
+        var hscrollSection = document.getElementById('results-section');
+        var hscrollTrack = document.getElementById('hscrollTrack');
+
+        if (hscrollSection && hscrollTrack && window.innerWidth > 768) {
+            var cards = hscrollTrack.querySelectorAll('.case-card');
+            var endLink = hscrollTrack.querySelector('.hscroll-end');
+            var totalItems = cards.length + (endLink ? 1 : 0);
+            var cardWidth = window.innerWidth * 0.8;
+            var gap = 32;
+            var totalScroll = (totalItems * (cardWidth + gap)) - window.innerWidth + 80;
+
+            gsap.to(hscrollTrack, {
+                x: function () { return -totalScroll; },
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: hscrollSection,
+                    start: 'top top',
+                    end: function () { return '+=' + totalScroll; },
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true
+                }
+            });
+
+            // Animate case bars when they enter viewport during scroll
+            cards.forEach(function (card) {
+                var bars = card.querySelectorAll('.case-bar');
+                gsap.set(bars, { scaleY: 0, transformOrigin: 'bottom' });
+
+                ScrollTrigger.create({
+                    trigger: card,
+                    containerAnimation: gsap.utils.toArray(hscrollTrack.parentElement ? undefined : undefined),
+                    start: 'left 80%',
+                    onEnter: function () {
+                        gsap.to(bars, { scaleY: 1, duration: 0.8, stagger: 0.1, ease: 'power2.out' });
+                    },
+                    once: true,
+                    horizontal: true
+                });
+            });
+        }
+
+        // Counter animation for metric values (used in case cards, hero stats)
         gsap.utils.toArray('[data-count]').forEach(function (el) {
             var target = parseFloat(el.dataset.count);
             var suffix = el.dataset.suffix || '';
             var isDecimal = el.dataset.decimal === 'true';
-
-            // Determine if element is in the hero (animate on load) or in a section (scroll-triggered)
             var isHero = el.closest('.hero') !== null;
 
             function animateCounter() {
@@ -104,36 +183,6 @@
                 });
             }
         });
-
-        // Parallax hero glows
-        gsap.utils.toArray('.hero-glow').forEach(function (glow, i) {
-            gsap.to(glow, {
-                scrollTrigger: {
-                    trigger: '.hero',
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: 1
-                },
-                y: -60 * (i + 1),
-                ease: 'none'
-            });
-        });
-
-        // Parallax hero grid
-        var heroGrid = document.querySelector('.hero-grid');
-        if (heroGrid) {
-            gsap.to(heroGrid, {
-                scrollTrigger: {
-                    trigger: '.hero',
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: 1
-                },
-                y: -40,
-                opacity: 0,
-                ease: 'none'
-            });
-        }
 
         // Page header entrance for inner pages
         var pageHeader = document.querySelector('.page-header');

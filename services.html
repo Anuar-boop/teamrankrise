@@ -6,6 +6,7 @@
     <title>SEO Services for NH Businesses — RankRise SEO</title>
     <meta name="description" content="Local SEO, Google Business Profile optimization, on-page SEO, and technical audits for New Hampshire businesses. Plans from $500/mo. Get a free audit today.">
     <link rel="canonical" href="https://teamrankrise.com/services.html">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <meta property="og:title" content="SEO Services — RankRise SEO">
     <meta property="og:description" content="Local SEO, GBP optimization, technical audits, and on-page SEO for NH businesses. Starting at $500/mo.">
     <meta property="og:url" content="https://teamrankrise.com/services.html">
@@ -17,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <noscript><style>.fade-up{opacity:1;transform:none;}</style></noscript>
+    <noscript><style>.reveal{opacity:1;transform:none;}</style></noscript>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -56,17 +57,25 @@
 </head>
 <body>
 
+<svg class="noise-overlay" width="100%" height="100%">
+    <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+    <rect width="100%" height="100%" filter="url(#noise)"/>
+</svg>
+
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
-        <a href="/" class="nav-logo"><svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="28" rx="6" fill="#1B4D3E"/><path d="M7 20L11 8h2l4 8 4-12h2" stroke="#E8A838" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> RankRise</a>
+        <a href="/" class="nav-logo">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18L8 6h1.5L13 14l3-10h1.5" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            RankRise
+        </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         <ul class="nav-menu" id="navMenu">
             <li><a href="/">Home</a></li>
             <li><a href="/services.html" class="active">Services</a></li>
-            <li><a href="/case-studies.html">Case Studies</a></li>
+            <li><a href="/case-studies.html">Results</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/about.html">About</a></li>
-            <li class="nav-cta"><a href="/contact.html" class="btn btn-primary btn-sm">Free SEO Audit</a></li>
+            <li class="nav-cta"><a href="/contact.html" class="btn-nav">Book a Call &rarr;</a></li>
         </ul>
     </div>
 </nav>
@@ -79,10 +88,9 @@
     </div>
 </section>
 
-<!-- Service 1: Local SEO -->
 <section class="section">
     <div class="container">
-        <div class="service-detail fade-up">
+        <div class="service-detail reveal" id="local-seo">
             <div>
                 <h2>Local SEO</h2>
                 <p>Get found by customers in your city and service area. Local SEO puts your business in the Google Map Pack — the top 3 results that get 42% of all clicks for local searches.</p>
@@ -99,8 +107,7 @@
             <div class="service-card-visual">&#127759;</div>
         </div>
 
-        <!-- Service 2: GBP -->
-        <div class="service-detail fade-up">
+        <div class="service-detail reveal" id="gbp">
             <div>
                 <h2>Google Business Profile Optimization</h2>
                 <p>Your Google Business Profile is often the first thing customers see. An optimized profile converts browsers into callers. Most businesses only fill in 30% of their profile — we complete and optimize 100%.</p>
@@ -117,8 +124,7 @@
             <div class="service-card-visual">&#128205;</div>
         </div>
 
-        <!-- Service 3: On-Page -->
-        <div class="service-detail fade-up">
+        <div class="service-detail reveal" id="on-page">
             <div>
                 <h2>On-Page SEO</h2>
                 <p>On-page SEO is the foundation everything else is built on. We optimize every element Google looks at when deciding where to rank your pages — from title tags to content structure.</p>
@@ -135,8 +141,7 @@
             <div class="service-card-visual">&#128196;</div>
         </div>
 
-        <!-- Service 4: Technical -->
-        <div class="service-detail fade-up">
+        <div class="service-detail reveal" id="technical">
             <div>
                 <h2>Technical SEO</h2>
                 <p>If Google can't crawl your site properly, no amount of great content will help. Technical SEO removes the invisible barriers between your website and higher rankings.</p>
@@ -153,8 +158,7 @@
             <div class="service-card-visual">&#9881;</div>
         </div>
 
-        <!-- Service 5: Audits -->
-        <div class="service-detail fade-up">
+        <div class="service-detail reveal" id="audit">
             <div>
                 <h2>Comprehensive SEO Audit</h2>
                 <p>Not ready for ongoing SEO? Start with a one-time audit. You'll get a detailed report covering every SEO factor affecting your rankings, plus a prioritized action plan you can implement yourself or hand off to us.</p>
@@ -173,15 +177,14 @@
     </div>
 </section>
 
-<!-- Pricing Anchor -->
 <section class="section section-alt">
     <div class="container">
-        <div class="section-header fade-up">
+        <div class="section-header reveal">
             <span class="label">Investment</span>
             <h2>Transparent Pricing, No Surprises</h2>
             <p>Every business is different, so every plan is custom. Here's a starting point.</p>
         </div>
-        <div class="pricing-anchor fade-up">
+        <div class="pricing-anchor reveal">
             <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">Monthly SEO plans starting at</p>
             <div><span class="price-value">$500</span><span class="price-unit">/month</span></div>
             <p style="margin-top: 1rem; font-size: 0.95rem;">Custom plans based on your market, competition level, and goals. No long-term contracts required.</p>
@@ -190,10 +193,9 @@
     </div>
 </section>
 
-<!-- CTA -->
 <section class="section">
     <div class="container">
-        <div class="cta-banner fade-up">
+        <div class="cta-banner reveal">
             <h2>Not Sure Which Service You Need?</h2>
             <p>Start with a free audit. We'll tell you exactly what's holding your rankings back and recommend the right approach.</p>
             <div class="btn-group"><a href="/contact.html" class="btn btn-accent btn-lg">Get Your Free Audit</a></div>
@@ -204,12 +206,18 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
-            <div class="footer-brand"><a href="/" class="nav-logo"><svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="28" rx="6" fill="#1B4D3E"/><path d="M7 20L11 8h2l4 8 4-12h2" stroke="#E8A838" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> RankRise</a><p>Helping New Hampshire businesses dominate local search and grow through proven SEO strategies.</p></div>
-            <div><h4>Services</h4><ul><li><a href="/services.html">Local SEO</a></li><li><a href="/services.html">Google Business Profile</a></li><li><a href="/services.html">On-Page SEO</a></li><li><a href="/services.html">Technical SEO</a></li><li><a href="/services.html">SEO Audits</a></li></ul></div>
+            <div class="footer-brand">
+                <a href="/" class="nav-logo">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18L8 6h1.5L13 14l3-10h1.5" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    RankRise
+                </a>
+                <p>NH's local search specialists.</p>
+            </div>
+            <div><h4>Services</h4><ul><li><a href="/services.html#local-seo">Local SEO</a></li><li><a href="/services.html#gbp">GBP Optimization</a></li><li><a href="/services.html#on-page">On-Page SEO</a></li><li><a href="/services.html#technical">Technical SEO</a></li><li><a href="/services.html#audit">SEO Audits</a></li></ul></div>
             <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/case-studies.html">Case Studies</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contact.html">Contact</a></li></ul></div>
-            <div><h4>Contact</h4><ul><li><a href="mailto:alex@teamrankrise.com">alex@teamrankrise.com</a></li><li>New Hampshire, USA</li></ul></div>
+            <div><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul><p class="footer-contact">alex@teamrankrise.com<br>New Hampshire, USA</p></div>
         </div>
-        <div class="footer-bottom"><span>&copy; 2026 RankRise SEO. All rights reserved.</span><span><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Service</a></span></div>
+        <div class="footer-bottom"><span>&copy; 2026 RankRise SEO</span><span><a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a></span></div>
     </div>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

@@ -6,6 +6,7 @@
     <title>RankRise SEO — Dominate Local Search in New Hampshire</title>
     <meta name="description" content="RankRise helps NH businesses rank #1 on Google. Local SEO, Google Business Profile optimization, and technical audits. Get your free SEO audit today.">
     <link rel="canonical" href="https://teamrankrise.com/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <meta property="og:title" content="RankRise SEO — Dominate Local Search in New Hampshire">
     <meta property="og:description" content="Local SEO services that put NH businesses on page 1. Free audit available.">
     <meta property="og:url" content="https://teamrankrise.com/">
@@ -18,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <noscript><style>.fade-up{opacity:1;transform:none;}</style></noscript>
+    <noscript><style>.reveal{opacity:1;transform:none;}</style></noscript>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -43,28 +44,24 @@
         "serviceType": ["Local SEO", "Google Business Profile Optimization", "Technical SEO Audit", "On-Page SEO", "SEO Strategy"]
     }
     </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://teamrankrise.com/"
-        }]
-    }
-    </script>
 </head>
 <body>
+
+<!-- Noise Texture -->
+<svg class="noise-overlay" width="100%" height="100%">
+    <filter id="noise">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+        <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noise)"/>
+</svg>
 
 <!-- Navigation -->
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
         <a href="/" class="nav-logo">
-            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="28" height="28" rx="6" fill="#1B4D3E"/>
-                <path d="M7 20L11 8h2l4 8 4-12h2" stroke="#E8A838" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 18L8 6h1.5L13 14l3-10h1.5" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             RankRise
         </a>
@@ -74,10 +71,10 @@
         <ul class="nav-menu" id="navMenu">
             <li><a href="/" class="active">Home</a></li>
             <li><a href="/services.html">Services</a></li>
-            <li><a href="/case-studies.html">Case Studies</a></li>
+            <li><a href="/case-studies.html">Results</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/about.html">About</a></li>
-            <li class="nav-cta"><a href="/contact.html" class="btn btn-primary btn-sm">Free SEO Audit</a></li>
+            <li class="nav-cta"><a href="/contact.html" class="btn-nav">Book a Call &rarr;</a></li>
         </ul>
     </div>
 </nav>
@@ -86,58 +83,43 @@
 <section class="hero">
     <div class="hero-glow hero-glow-1"></div>
     <div class="hero-glow hero-glow-2"></div>
-    <div class="hero-glow hero-glow-3"></div>
-    <div class="hero-grid"></div>
 
     <div class="container">
         <div class="hero-content">
-            <div class="hero-badge">New Hampshire's #1 SEO Agency</div>
+            <div class="hero-label">NH's #1 Local SEO Agency</div>
             <h1>
-                <span class="line">Dominate Local Search.</span>
-                <span class="line"><span class="highlight">Grow Your Business.</span></span>
+                <span class="line">Your Competitors</span>
+                <span class="line">Are Ranking Above You.</span>
+                <span class="line line-accent">We fix that.</span>
             </h1>
-            <p class="hero-subtitle">Your competitors are ranking above you on Google right now. We fix that. RankRise delivers measurable SEO results for New Hampshire businesses — more calls, more customers, more revenue.</p>
+            <p class="hero-subtitle">RankRise delivers measurable SEO results for New Hampshire businesses — more calls, more customers, more revenue.</p>
             <div class="hero-actions">
-                <a href="/contact.html" class="btn btn-accent btn-lg">Get Your Free SEO Audit</a>
-                <a href="/services.html" class="btn btn-ghost btn-lg">View Services &rarr;</a>
-            </div>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <strong data-count="150" data-suffix="+">0</strong>
-                    <span>Businesses Helped</span>
-                </div>
-                <div class="hero-stat">
-                    <strong data-count="47" data-suffix="%">0</strong>
-                    <span>Avg. More Calls</span>
-                </div>
-                <div class="hero-stat">
-                    <strong>90 Days</strong>
-                    <span>To Page 1</span>
-                </div>
+                <a href="/contact.html" class="btn btn-gradient btn-lg">Get Free Audit</a>
+                <a href="/case-studies.html" class="btn btn-ghost btn-lg">View Results &rarr;</a>
             </div>
         </div>
         <div class="hero-visual">
             <div class="hero-card">
-                <h4 style="margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">Live Rankings Preview</h4>
+                <div class="hero-card-header">Live Rankings Preview</div>
                 <div class="rank-preview">
                     <div class="rank-item">
-                        <span class="rank-pos top">#1</span>
+                        <span class="rank-pos">#1</span>
                         <span class="rank-keyword">"plumber near me manchester nh"</span>
                         <span class="rank-change">+14</span>
                     </div>
                     <div class="rank-item">
-                        <span class="rank-pos top">#2</span>
+                        <span class="rank-pos">#2</span>
                         <span class="rank-keyword">"best dentist concord nh"</span>
                         <span class="rank-change">+22</span>
                     </div>
                     <div class="rank-item">
-                        <span class="rank-pos top">#1</span>
+                        <span class="rank-pos">#1</span>
                         <span class="rank-keyword">"emergency hvac nashua"</span>
                         <span class="rank-change">+18</span>
                     </div>
                     <div class="rank-item">
-                        <span class="rank-pos top">#3</span>
-                        <span class="rank-keyword">"italian restaurant portsmouth nh"</span>
+                        <span class="rank-pos">#3</span>
+                        <span class="rank-keyword">"italian restaurant portsmouth"</span>
                         <span class="rank-change">+9</span>
                     </div>
                 </div>
@@ -155,147 +137,216 @@
                     <div class="bar active" style="height: 100%"></div>
                     <div class="bar active" style="height: 98%"></div>
                 </div>
-                <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem;">Organic traffic growth — 12 months</p>
+                <div class="chart-label">Organic traffic growth — 12 months</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Marquee -->
-<div class="marquee-strip">
-    <div class="marquee-track">
-        <span class="marquee-item"><span class="dot"></span> 150+ Businesses Helped</span>
-        <span class="marquee-item"><span class="dot"></span> 47% Average More Calls</span>
-        <span class="marquee-item"><span class="dot"></span> Page 1 in 90 Days</span>
-        <span class="marquee-item"><span class="dot"></span> 3.2x Average ROI</span>
-        <span class="marquee-item"><span class="dot"></span> Google Business Profile Experts</span>
-        <span class="marquee-item"><span class="dot"></span> New Hampshire SEO Specialists</span>
-        <span class="marquee-item"><span class="dot"></span> No Long-Term Contracts</span>
-        <span class="marquee-item"><span class="dot"></span> Free SEO Audits</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="marquee-item"><span class="dot"></span> 150+ Businesses Helped</span>
-        <span class="marquee-item"><span class="dot"></span> 47% Average More Calls</span>
-        <span class="marquee-item"><span class="dot"></span> Page 1 in 90 Days</span>
-        <span class="marquee-item"><span class="dot"></span> 3.2x Average ROI</span>
-        <span class="marquee-item"><span class="dot"></span> Google Business Profile Experts</span>
-        <span class="marquee-item"><span class="dot"></span> New Hampshire SEO Specialists</span>
-        <span class="marquee-item"><span class="dot"></span> No Long-Term Contracts</span>
-        <span class="marquee-item"><span class="dot"></span> Free SEO Audits</span>
+<!-- Tool Logos Bar -->
+<div class="tools-bar">
+    <div class="container">
+        <div class="tools-bar-inner">
+            <span class="tools-bar-label">Trusted tools:</span>
+            <span class="tool-logo">Ahrefs</span>
+            <span class="tool-logo">SEMrush</span>
+            <span class="tool-logo">Google Search Console</span>
+            <span class="tool-logo">Screaming Frog</span>
+            <span class="tool-logo">Moz</span>
+        </div>
     </div>
 </div>
 
-<!-- Pain Points -->
-<section class="section">
+<!-- Problem Section (Editorial) -->
+<section class="problem-section">
     <div class="container">
-        <div class="section-header fade-up">
+        <div class="problem-content">
             <span class="label">The Problem</span>
-            <h2>Your Competitors Are Stealing Your Customers Right Now</h2>
-            <p>Every day you're not on page 1, potential customers choose someone else. Here's what's costing you money.</p>
-        </div>
-        <div class="pain-grid stagger-children">
-            <div class="pain-card">
-                <div class="pain-number">1</div>
-                <h3>You're Invisible on Google</h3>
-                <p>97% of people search online before choosing a local business. If you're not in the top 3 results, you don't exist to them.</p>
-            </div>
-            <div class="pain-card">
-                <div class="pain-number">2</div>
-                <h3>Your Google Profile Is Incomplete</h3>
-                <p>An unoptimized Google Business Profile means missed calls, lost map pack rankings, and zero trust signals for new customers.</p>
-            </div>
-            <div class="pain-card">
-                <div class="pain-number">3</div>
-                <h3>Your Website Isn't Working For You</h3>
-                <p>Slow loading, no local keywords, missing schema markup — your site is actively pushing Google away instead of attracting it.</p>
-            </div>
+            <h2 class="problem-headline reveal">Most NH businesses are invisible on Google.</h2>
+            <p class="problem-text reveal">68% of online experiences start with a search engine. If you're not on page 1, you don't exist to potential customers. Every day without SEO is revenue lost to competitors who invested first.</p>
+            <p class="problem-text reveal" style="margin-bottom: 2rem;"><strong style="color: var(--text);">Three things killing your rankings:</strong></p>
+            <ol class="problem-list reveal">
+                <li>No Google Business Profile optimization — you're invisible in the Map Pack where 42% of local clicks happen</li>
+                <li>Website built years ago and never updated — slow, no keywords, no schema markup, pushing Google away</li>
+                <li>Zero local backlinks or citations — Google doesn't trust you enough to rank you above established competitors</li>
+            </ol>
         </div>
     </div>
 </section>
 
-<!-- Services -->
+<!-- Services (Bento Grid) -->
 <section class="section section-alt">
     <div class="container">
-        <div class="section-header fade-up">
+        <div class="section-header">
             <span class="label">What We Do</span>
-            <h2>SEO Services That Actually Move the Needle</h2>
+            <h2>SEO services that actually move the needle.</h2>
             <p>No fluff, no vanity metrics. Every service is designed to get your phone ringing.</p>
         </div>
-        <div class="grid-4 stagger-children">
-            <div class="card">
-                <div class="card-icon">&#127759;</div>
+        <div class="bento-grid">
+            <!-- Hero Cell -->
+            <div class="bento-cell bento-hero reveal">
+                <div class="bento-icon">&#127759;</div>
                 <h3>Local SEO</h3>
-                <p>Dominate the Google Map Pack and local search results for your city and service area.</p>
-                <a href="/services.html" class="card-link">Learn More &rarr;</a>
+                <p>Dominate the Google Map Pack and local search results for your city and service area. We build citations, optimize your presence, and make sure local customers find you first.</p>
+                <a href="/services.html#local-seo" class="bento-link">Learn more &rarr;</a>
             </div>
-            <div class="card">
-                <div class="card-icon">&#128205;</div>
+            <!-- Standard Cells -->
+            <div class="bento-cell reveal">
+                <div class="bento-icon">&#128205;</div>
                 <h3>Google Business Profile</h3>
-                <p>Full optimization of your GBP listing — photos, categories, posts, Q&A, and review strategy.</p>
-                <a href="/services.html" class="card-link">Learn More &rarr;</a>
+                <p>Full optimization — photos, categories, posts, Q&A, and review strategy that converts browsers into callers.</p>
+                <a href="/services.html#gbp" class="bento-link">Learn more &rarr;</a>
             </div>
-            <div class="card">
-                <div class="card-icon">&#128196;</div>
+            <div class="bento-cell reveal">
+                <div class="bento-icon">&#128196;</div>
                 <h3>On-Page SEO</h3>
-                <p>Keyword research, content optimization, meta tags, and internal linking that Google rewards.</p>
-                <a href="/services.html" class="card-link">Learn More &rarr;</a>
+                <p>Keyword research, content optimization, meta tags, and internal linking that Google actually rewards.</p>
+                <a href="/services.html#on-page" class="bento-link">Learn more &rarr;</a>
             </div>
-            <div class="card">
-                <div class="card-icon">&#9881;</div>
+            <div class="bento-cell reveal">
+                <div class="bento-icon">&#9881;</div>
                 <h3>Technical SEO</h3>
                 <p>Site speed, mobile optimization, schema markup, and crawl fixes that unlock higher rankings.</p>
-                <a href="/services.html" class="card-link">Learn More &rarr;</a>
+                <a href="/services.html#technical" class="bento-link">Learn more &rarr;</a>
+            </div>
+            <div class="bento-cell reveal">
+                <div class="bento-icon">&#128269;</div>
+                <h3>SEO Audits</h3>
+                <p>50+ ranking factors analyzed. Competitor benchmarking. Prioritized action plan with expected impact.</p>
+                <a href="/services.html#audit" class="bento-link">Learn more &rarr;</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Stats -->
-<section class="section section-glow">
-    <div class="container">
-        <div class="stats-bar fade-up">
-            <div class="stat-item">
-                <span class="stat-value" data-count="150" data-suffix="+">0</span>
-                <span class="stat-label">Businesses Helped</span>
+<!-- Results (Horizontal Scroll) -->
+<section class="hscroll-section" id="results-section">
+    <div class="hscroll-header">
+        <span class="label">Results</span>
+        <h2 class="reveal">Real data from real NH businesses.</h2>
+    </div>
+    <div class="hscroll-track-wrapper">
+        <div class="hscroll-track" id="hscrollTrack">
+            <!-- Card 1: Restaurant -->
+            <div class="case-card">
+                <span class="case-card-industry">Restaurant</span>
+                <h3>Italian Restaurant — Manchester, NH</h3>
+                <p>From invisible on Google to #1 in the Map Pack. Zero online presence to dominating local dining searches.</p>
+                <div class="case-metrics">
+                    <div class="metric">
+                        <span class="metric-value">312%</span>
+                        <span class="metric-label">More Traffic</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">89%</span>
+                        <span class="metric-label">More Calls</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">#1</span>
+                        <span class="metric-label">Map Pack</span>
+                    </div>
+                </div>
+                <div class="case-bar-chart">
+                    <div class="case-bar-group">
+                        <div class="case-bar before" style="height: 25%"></div>
+                        <span class="case-bar-label">Before</span>
+                    </div>
+                    <div class="case-bar-group">
+                        <div class="case-bar after" style="height: 80%"></div>
+                        <span class="case-bar-label">After</span>
+                    </div>
+                </div>
             </div>
-            <div class="stat-item">
-                <span class="stat-value" data-count="47" data-suffix="%">0</span>
-                <span class="stat-label">Average More Calls</span>
+            <!-- Card 2: HVAC -->
+            <div class="case-card">
+                <span class="case-card-industry">Home Services</span>
+                <h3>HVAC Company — Nashua, NH</h3>
+                <p>Reduced Google Ads spend by 60% while maintaining lead volume. Organic traffic replaced paid dependency.</p>
+                <div class="case-metrics">
+                    <div class="metric">
+                        <span class="metric-value">478%</span>
+                        <span class="metric-label">More Traffic</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">$1,800</span>
+                        <span class="metric-label">Saved/Mo</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">63%</span>
+                        <span class="metric-label">More Calls</span>
+                    </div>
+                </div>
+                <div class="case-bar-chart">
+                    <div class="case-bar-group">
+                        <div class="case-bar before" style="height: 18%"></div>
+                        <span class="case-bar-label">Before</span>
+                    </div>
+                    <div class="case-bar-group">
+                        <div class="case-bar after" style="height: 88%"></div>
+                        <span class="case-bar-label">After</span>
+                    </div>
+                </div>
             </div>
-            <div class="stat-item">
-                <span class="stat-value">90 Days</span>
-                <span class="stat-label">To Page 1 Rankings</span>
+            <!-- Card 3: Dental -->
+            <div class="case-card">
+                <span class="case-card-industry">Dental</span>
+                <h3>Dental Practice — Concord, NH</h3>
+                <p>From zero search visibility to 41 new patients per month through targeted local SEO and schema markup.</p>
+                <div class="case-metrics">
+                    <div class="metric">
+                        <span class="metric-value">267%</span>
+                        <span class="metric-label">More Traffic</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">41</span>
+                        <span class="metric-label">Patients/Mo</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">#2</span>
+                        <span class="metric-label">Map Pack</span>
+                    </div>
+                </div>
+                <div class="case-bar-chart">
+                    <div class="case-bar-group">
+                        <div class="case-bar before" style="height: 28%"></div>
+                        <span class="case-bar-label">Before</span>
+                    </div>
+                    <div class="case-bar-group">
+                        <div class="case-bar after" style="height: 95%"></div>
+                        <span class="case-bar-label">After</span>
+                    </div>
+                </div>
             </div>
-            <div class="stat-item">
-                <span class="stat-value" data-count="3.2" data-suffix="x" data-decimal="true">0</span>
-                <span class="stat-label">Average ROI</span>
+            <!-- End link -->
+            <div class="hscroll-end">
+                <a href="/case-studies.html" class="btn btn-outline">View All Case Studies &rarr;</a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Process -->
+<!-- Process (Timeline) -->
 <section class="section section-alt">
     <div class="container">
-        <div class="section-header fade-up">
-            <span class="label">Our Process</span>
-            <h2>Three Steps to Page 1</h2>
-            <p>A clear, proven process that takes you from invisible to unavoidable.</p>
+        <div class="section-header">
+            <span class="label">How It Works</span>
+            <h2>Three steps to page 1.</h2>
         </div>
-        <div class="steps-grid stagger-children">
-            <div class="step-card">
-                <div class="step-number">1</div>
-                <h3>Free SEO Audit</h3>
-                <p>We analyze your current rankings, website health, Google Business Profile, and competitors. You get a clear picture of where you stand and what's holding you back.</p>
+        <div class="timeline">
+            <div class="timeline-step reveal">
+                <div class="timeline-dot">1</div>
+                <h3>Free Audit</h3>
+                <p>We analyze your rankings, site health, and competitors. You get a clear picture of what's holding you back.</p>
             </div>
-            <div class="step-card">
-                <div class="step-number">2</div>
+            <div class="timeline-step reveal">
+                <div class="timeline-dot">2</div>
                 <h3>Custom Strategy</h3>
-                <p>Based on your audit, we build a tailored SEO strategy targeting the keywords your customers actually search. No cookie-cutter plans.</p>
+                <p>Based on your audit, we build a tailored SEO roadmap targeting the keywords your customers actually search.</p>
             </div>
-            <div class="step-card">
-                <div class="step-number">3</div>
+            <div class="timeline-step reveal">
+                <div class="timeline-dot">3</div>
                 <h3>Rankings Climb</h3>
-                <p>We execute the strategy, track progress weekly, and report results monthly. You see your rankings, traffic, and calls increase consistently.</p>
+                <p>We execute weekly, report monthly. You see your rankings, traffic, and calls increase consistently.</p>
             </div>
         </div>
     </div>
@@ -304,54 +355,45 @@
 <!-- Blog Preview -->
 <section class="section">
     <div class="container">
-        <div class="section-header fade-up">
+        <div class="section-header">
             <span class="label">From the Blog</span>
-            <h2>SEO Insights for NH Businesses</h2>
-            <p>Actionable tips and local SEO strategies you can use today.</p>
+            <h2>SEO insights for NH businesses.</h2>
         </div>
-        <div class="grid-2 stagger-children">
-            <div class="blog-card">
-                <div class="blog-card-img">&#128214;</div>
-                <div class="blog-card-body">
-                    <span class="tag">Local SEO</span>
-                    <h3><a href="/blog/local-seo-guide-nh.html">The Complete Local SEO Guide for New Hampshire Businesses (2026)</a></h3>
-                    <p>Everything you need to know about ranking in the Map Pack, optimizing for "near me" searches, and dominating local results in NH.</p>
-                    <div class="blog-card-meta">
-                        <span>Alex</span>
-                        <span>Feb 15, 2026</span>
-                        <span>12 min read</span>
-                    </div>
+        <div class="blog-grid">
+            <div class="blog-card reveal">
+                <span class="tag">Local SEO</span>
+                <h3><a href="/blog/local-seo-guide-nh.html">The Complete Local SEO Guide for New Hampshire Businesses (2026)</a></h3>
+                <div class="blog-card-meta">
+                    <span>Alex</span>
+                    <span>Feb 15, 2026</span>
+                    <span>12 min read</span>
                 </div>
             </div>
-            <div class="blog-card">
-                <div class="blog-card-img">&#128205;</div>
-                <div class="blog-card-body">
-                    <span class="tag">Google Business Profile</span>
-                    <h3><a href="/blog/google-business-profile-tips.html">7 Google Business Profile Tips That Actually Increase Calls</a></h3>
-                    <p>Most businesses set up their GBP and forget it. Here are 7 proven optimizations that turn your profile into a lead-generating machine.</p>
-                    <div class="blog-card-meta">
-                        <span>Alex</span>
-                        <span>Feb 12, 2026</span>
-                        <span>9 min read</span>
-                    </div>
+            <div class="blog-card reveal">
+                <span class="tag">Google Business Profile</span>
+                <h3><a href="/blog/google-business-profile-tips.html">7 Google Business Profile Tips That Actually Increase Calls</a></h3>
+                <div class="blog-card-meta">
+                    <span>Alex</span>
+                    <span>Feb 12, 2026</span>
+                    <span>9 min read</span>
                 </div>
             </div>
         </div>
         <div style="text-align: center; margin-top: 2.5rem;">
-            <a href="/blog/" class="btn btn-secondary">View All Posts</a>
+            <a href="/blog/" class="btn btn-outline">View All Posts &rarr;</a>
         </div>
     </div>
 </section>
 
-<!-- CTA Banner -->
-<section class="section">
+<!-- CTA Section -->
+<section class="cta-section">
     <div class="container">
-        <div class="cta-banner fade-up">
-            <h2>Ready to Stop Losing Customers to Competitors?</h2>
-            <p>Get a free, no-obligation SEO audit of your business. We'll show you exactly where you're losing rankings and how to fix it.</p>
+        <div class="cta-box reveal">
+            <h2>Ready to stop losing customers to competitors?</h2>
+            <p>Get a free, no-obligation SEO audit. We'll show you exactly what's broken and how to fix it.</p>
             <div class="btn-group">
-                <a href="/contact.html" class="btn btn-accent btn-lg">Get Your Free Audit</a>
-                <a href="mailto:alex@teamrankrise.com" class="btn btn-white btn-lg">Email Us Directly</a>
+                <a href="/contact.html" class="btn btn-gradient btn-lg">Get Your Free Audit</a>
+                <a href="mailto:alex@teamrankrise.com" class="btn btn-outline btn-lg">Email Us</a>
             </div>
         </div>
     </div>
@@ -363,22 +405,21 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href="/" class="nav-logo">
-                    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="28" height="28" rx="6" fill="#1B4D3E"/>
-                        <path d="M7 20L11 8h2l4 8 4-12h2" stroke="#E8A838" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 18L8 6h1.5L13 14l3-10h1.5" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                     RankRise
                 </a>
-                <p>Helping New Hampshire businesses dominate local search and grow through proven SEO strategies.</p>
+                <p>NH's local search specialists.</p>
             </div>
             <div>
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="/services.html">Local SEO</a></li>
-                    <li><a href="/services.html">Google Business Profile</a></li>
-                    <li><a href="/services.html">On-Page SEO</a></li>
-                    <li><a href="/services.html">Technical SEO</a></li>
-                    <li><a href="/services.html">SEO Audits</a></li>
+                    <li><a href="/services.html#local-seo">Local SEO</a></li>
+                    <li><a href="/services.html#gbp">GBP Optimization</a></li>
+                    <li><a href="/services.html#on-page">On-Page SEO</a></li>
+                    <li><a href="/services.html#technical">Technical SEO</a></li>
+                    <li><a href="/services.html#audit">SEO Audits</a></li>
                 </ul>
             </div>
             <div>
@@ -391,19 +432,17 @@
                 </ul>
             </div>
             <div>
-                <h4>Contact</h4>
+                <h4>Legal</h4>
                 <ul>
-                    <li><a href="mailto:alex@teamrankrise.com">alex@teamrankrise.com</a></li>
-                    <li>New Hampshire, USA</li>
+                    <li><a href="/privacy.html">Privacy</a></li>
+                    <li><a href="/terms.html">Terms</a></li>
                 </ul>
+                <p class="footer-contact">alex@teamrankrise.com<br>New Hampshire, USA</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>&copy; 2026 RankRise SEO. All rights reserved.</span>
-            <span>
-                <a href="/privacy.html">Privacy Policy</a> &middot;
-                <a href="/terms.html">Terms of Service</a>
-            </span>
+            <span>&copy; 2026 RankRise SEO</span>
+            <span><a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a></span>
         </div>
     </div>
 </footer>

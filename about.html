@@ -6,6 +6,7 @@
     <title>About Alex — RankRise SEO | New Hampshire SEO Expert</title>
     <meta name="description" content="Meet Alex, founder of RankRise SEO. Learn how we help NH businesses dominate local search with data-driven SEO strategies. Request your free audit today.">
     <link rel="canonical" href="https://teamrankrise.com/about.html">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <meta property="og:title" content="About Alex — RankRise SEO">
     <meta property="og:description" content="Meet the founder of RankRise SEO and learn about our approach to growing NH businesses through search.">
     <meta property="og:url" content="https://teamrankrise.com/about.html">
@@ -17,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <noscript><style>.fade-up{opacity:1;transform:none;}</style></noscript>
+    <noscript><style>.reveal{opacity:1;transform:none;}</style></noscript>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -31,40 +32,40 @@
 </head>
 <body>
 
-<!-- Navigation -->
+<svg class="noise-overlay" width="100%" height="100%">
+    <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+    <rect width="100%" height="100%" filter="url(#noise)"/>
+</svg>
+
 <nav class="navbar" id="navbar">
     <div class="nav-inner">
         <a href="/" class="nav-logo">
-            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="28" rx="6" fill="#1B4D3E"/><path d="M7 20L11 8h2l4 8 4-12h2" stroke="#E8A838" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18L8 6h1.5L13 14l3-10h1.5" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             RankRise
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         <ul class="nav-menu" id="navMenu">
             <li><a href="/">Home</a></li>
             <li><a href="/services.html">Services</a></li>
-            <li><a href="/case-studies.html">Case Studies</a></li>
+            <li><a href="/case-studies.html">Results</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/about.html" class="active">About</a></li>
-            <li class="nav-cta"><a href="/contact.html" class="btn btn-primary btn-sm">Free SEO Audit</a></li>
+            <li class="nav-cta"><a href="/contact.html" class="btn-nav">Book a Call &rarr;</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- Page Header -->
 <section class="page-header">
     <div class="container">
-        <div class="breadcrumb">
-            <a href="/">Home</a> <span>/</span> <span>About</span>
-        </div>
+        <div class="breadcrumb"><a href="/">Home</a> <span>/</span> <span>About</span></div>
         <h1>The Person Behind Your Rankings</h1>
         <p>No agency bloat. No account managers. You work directly with the person doing the work.</p>
     </div>
 </section>
 
-<!-- About Hero -->
 <section class="section">
     <div class="container">
-        <div class="about-hero fade-up">
+        <div class="about-hero reveal">
             <div class="about-photo">A</div>
             <div>
                 <h2>Hi, I'm Alex.</h2>
@@ -80,14 +81,13 @@
     </div>
 </section>
 
-<!-- Values -->
 <section class="section section-alt">
     <div class="container">
-        <div class="section-header fade-up">
+        <div class="section-header reveal">
             <span class="label">How I Work</span>
             <h2>Values That Drive Results</h2>
         </div>
-        <div class="values-grid fade-up stagger-children">
+        <div class="values-grid reveal">
             <div class="value-card">
                 <div class="value-icon">&#128200;</div>
                 <h3>Data Over Opinions</h3>
@@ -107,15 +107,14 @@
     </div>
 </section>
 
-<!-- Tools -->
 <section class="section">
     <div class="container">
-        <div class="section-header fade-up">
+        <div class="section-header reveal">
             <span class="label">Toolset</span>
             <h2>Enterprise-Grade Tools, Small Business Prices</h2>
             <p>I invest in the same tools used by agencies charging $5,000+/month — so you don't have to.</p>
         </div>
-        <div class="tools-logos fade-up stagger-children">
+        <div class="tools-logos reveal">
             <span class="tool-badge">SEMrush</span>
             <span class="tool-badge">Ahrefs</span>
             <span class="tool-badge">Google Search Console</span>
@@ -129,10 +128,9 @@
     </div>
 </section>
 
-<!-- CTA -->
 <section class="section">
     <div class="container">
-        <div class="cta-banner fade-up">
+        <div class="cta-banner reveal">
             <h2>Ready to Work With Someone Who Actually Cares?</h2>
             <p>No contracts. No BS. Just a conversation about where your business stands and where it could be.</p>
             <div class="btn-group">
@@ -142,25 +140,21 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href="/" class="nav-logo">
-                    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="28" rx="6" fill="#1B4D3E"/><path d="M7 20L11 8h2l4 8 4-12h2" stroke="#E8A838" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18L8 6h1.5L13 14l3-10h1.5" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     RankRise
                 </a>
-                <p>Helping New Hampshire businesses dominate local search and grow through proven SEO strategies.</p>
+                <p>NH's local search specialists.</p>
             </div>
-            <div><h4>Services</h4><ul><li><a href="/services.html">Local SEO</a></li><li><a href="/services.html">Google Business Profile</a></li><li><a href="/services.html">On-Page SEO</a></li><li><a href="/services.html">Technical SEO</a></li><li><a href="/services.html">SEO Audits</a></li></ul></div>
+            <div><h4>Services</h4><ul><li><a href="/services.html#local-seo">Local SEO</a></li><li><a href="/services.html#gbp">GBP Optimization</a></li><li><a href="/services.html#on-page">On-Page SEO</a></li><li><a href="/services.html#technical">Technical SEO</a></li><li><a href="/services.html#audit">SEO Audits</a></li></ul></div>
             <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/case-studies.html">Case Studies</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contact.html">Contact</a></li></ul></div>
-            <div><h4>Contact</h4><ul><li><a href="mailto:alex@teamrankrise.com">alex@teamrankrise.com</a></li><li>New Hampshire, USA</li></ul></div>
+            <div><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul><p class="footer-contact">alex@teamrankrise.com<br>New Hampshire, USA</p></div>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 RankRise SEO. All rights reserved.</span>
-            <span><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Service</a></span>
-        </div>
+        <div class="footer-bottom"><span>&copy; 2026 RankRise SEO</span><span><a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a></span></div>
     </div>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
