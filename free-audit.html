@@ -486,7 +486,11 @@
 
         // Call our Lighthouse backend API
         // Fast, accurate audits with no external dependencies
-        var apiUrl = '/api/audit?url=' + encodeURIComponent(url);
+        // Use Render backend if deployed, otherwise use relative path for local dev
+        var apiBase = window.location.hostname === 'localhost' 
+            ? '/api/audit' 
+            : 'https://rankrise-audit-backend.onrender.com/api/audit';
+        var apiUrl = apiBase + '?url=' + encodeURIComponent(url);
 
         showStep(1);
 
