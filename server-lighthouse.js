@@ -213,6 +213,13 @@ const server = http.createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('Content-Type', 'application/json');
+  
+  // CACHE BUSTING - Force no caching for latest mobile UI fixes
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0, public');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+  res.setHeader('X-Cache-Busted', new Date().toISOString());
+  res.setHeader('X-Version', 'rankrise-v2.1-mobile-fix');
 
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
