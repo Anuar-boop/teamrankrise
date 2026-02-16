@@ -85,11 +85,12 @@
             cursor: pointer;
             transition: opacity 0.3s;
             white-space: nowrap;
+            flex-shrink: 0;
         }
         .audit-input-wrap button:hover { opacity: 0.9; }
         .audit-input-wrap button:disabled { opacity: 0.5; cursor: not-allowed; }
         .audit-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; }
-        .audit-loading { display: none; text-align: center; padding: 4rem 0; }
+        .audit-loading { display: none; text-align: center; padding: 4rem 2rem; }
         .audit-loading.active { display: block; }
         .spinner {
             width: 48px; height: 48px;
@@ -100,6 +101,11 @@
             margin: 0 auto 1.5rem;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
+        .loading-status {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
         .loading-steps { list-style: none; max-width: 320px; margin: 0 auto; text-align: left; }
         .loading-steps li {
             padding: 0.5rem 0; font-size: 0.875rem; color: var(--text-muted);
@@ -189,11 +195,77 @@
         .audit-error.active { display: block; }
         .domain-name { font-weight: 700; color: var(--text); }
         @media (max-width: 768px) {
-            .comparison-grid { grid-template-columns: 1fr; }
+            .audit-hero { padding: 120px 0 60px; }
+            .audit-hero-inner { padding: 0 1.5rem; }
+            .audit-hero-inner h1 { font-size: 2rem; margin-bottom: 0.75rem; }
+            .audit-hero-inner .hero-subtitle { font-size: 0.95rem; margin-bottom: 2rem; }
+            .comparison-grid { grid-template-columns: 1fr; gap: 1.5rem; }
             .vs-badge { padding: 0; transform: rotate(90deg); }
             .issues-grid { grid-template-columns: 1fr; }
-            .audit-input-wrap { flex-direction: column; }
-            .audit-input-wrap button { border-radius: 0; }
+            .audit-input-wrap { flex-direction: column; border-radius: var(--radius-lg); }
+            .audit-input-wrap input { padding: 0.9rem 1.25rem; font-size: 16px; }
+            .audit-input-wrap button { 
+                padding: 0.9rem 1.25rem; 
+                font-size: 0.9rem; 
+                border-radius: 0;
+                width: 100%;
+                border-top: 1px solid var(--border);
+            }
+            .audit-note { font-size: 0.75rem; }
+            .score-card { padding: 2rem 1.5rem; }
+            .score-circle { width: 140px; height: 140px; }
+            .score-number .value { font-size: 2.2rem; }
+            .issues-section h3 { font-size: 1.1rem; }
+            .issue-item { font-size: 0.8rem; padding: 0.85rem 1rem; }
+            .audit-cta { padding: 2rem 1.5rem; }
+            .audit-cta h2 { font-size: 1.35rem; }
+        }
+
+        @media (max-width: 480px) {
+            .audit-hero { padding: 100px 0 50px; min-height: auto; }
+            .audit-hero .hero-glow { display: none; }
+            .audit-hero-inner { padding: 0 1rem; }
+            .audit-hero-inner h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+            .audit-hero-inner .hero-subtitle { font-size: 0.85rem; margin-bottom: 1.5rem; }
+            .audit-input-wrap input { 
+                padding: 0.85rem 1rem; 
+                font-size: 16px;
+            }
+            .audit-input-wrap button { 
+                padding: 0.85rem 1rem; 
+                font-size: 0.85rem;
+                font-weight: 600;
+            }
+            .audit-note { margin-top: 0.75rem; font-size: 0.7rem; }
+            .label { margin-bottom: 1rem; font-size: 0.7rem; }
+            .score-card { padding: 1.5rem 1rem; }
+            .score-circle { width: 120px; height: 120px; margin-bottom: 1rem; }
+            .score-number .value { font-size: 1.8rem; }
+            .score-number .of { font-size: 0.7rem; }
+            .issues-section h3 { font-size: 1rem; margin-bottom: 1rem; }
+            .issue-item { 
+                font-size: 0.75rem; 
+                padding: 0.75rem 0.9rem;
+                gap: 0.5rem;
+            }
+            .issue-item .icon { width: 16px; height: 16px; }
+            .audit-cta { 
+                padding: 1.5rem 1rem; 
+                margin: 0 1rem;
+                border-radius: var(--radius);
+            }
+            .audit-cta h2 { font-size: 1.15rem; }
+            .audit-cta p { font-size: 0.85rem; }
+            .btn-row { flex-direction: column; gap: 0.75rem; }
+            .btn { font-size: 0.85rem; padding: 0.75rem 1rem; }
+            .comparison-grid { gap: 1rem; }
+            .audit-loading { padding: 3rem 1rem; }
+            .loading-status { font-size: 0.8rem; }
+            .loading-steps { max-width: 280px; }
+            .loading-steps li { font-size: 0.8rem; padding: 0.4rem 0; }
+            #fallbackForm div { flex-direction: column; }
+            #fallbackEmail { width: 100%; }
+            #fallbackBtn { width: 100%; }
         }
     </style>
 </head>
@@ -245,8 +317,9 @@
 
 <div class="audit-loading container" id="loadingSection">
     <div class="spinner"></div>
-    <p style="color: var(--text); font-weight: 600; margin-bottom: 1.5rem;">Analyzing <span class="domain-name" id="loadingDomain"></span></p>
-    <ul class="loading-steps" id="loadingSteps">
+    <p style="color: var(--text); font-weight: 600; margin-bottom: 0.75rem;">Analyzing <span class="domain-name" id="loadingDomain"></span></p>
+    <div class="loading-status" id="loadingStatus">Estimated time: 20-30 seconds</div>
+    <ul class="loading-steps" id="loadingSteps" style="margin-top: 1.5rem;">
         <li id="step1"><div class="check"></div> Checking page speed &amp; performance</li>
         <li id="step2"><div class="check"></div> Analyzing SEO best practices</li>
         <li id="step3"><div class="check"></div> Auditing accessibility</li>
@@ -255,18 +328,20 @@
 </div>
 
 <div class="audit-error container" id="errorSection">
-    <div style="max-width: 480px; margin: 0 auto; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 2.5rem; text-align: center;">
-        <p style="font-size: 1.125rem; font-weight: 600; color: var(--text);">We'll Send Your Audit Report</p>
-        <p id="errorMsg" style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem;"></p>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">Drop your email and we'll send a full SEO audit within 24 hours — free.</p>
-        <div id="fallbackForm" style="margin-top: 1.25rem;">
-            <div style="display: flex; gap: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border);">
-                <input type="email" id="fallbackEmail" placeholder="you@business.com" style="flex: 1; padding: 0.85rem 1.25rem; background: transparent; border: none; color: var(--text); font-family: inherit; font-size: 0.95rem; outline: none;">
-                <button id="fallbackBtn" style="padding: 0.85rem 1.5rem; background: linear-gradient(135deg, var(--emerald), #059669); color: white; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap;">Send My Audit</button>
+    <div style="max-width: 480px; margin: 0 auto 0; padding: 0 1.5rem;">
+        <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 2.5rem 1.5rem; text-align: center;">
+            <p style="font-size: 1.125rem; font-weight: 600; color: var(--text);">We'll Send Your Audit Report</p>
+            <p id="errorMsg" style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem;"></p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">Drop your email and we'll send a full SEO audit within 24 hours — free.</p>
+            <div id="fallbackForm" style="margin-top: 1.25rem;">
+                <div style="display: flex; gap: 0; flex-direction: column; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border);">
+                    <input type="email" id="fallbackEmail" placeholder="you@business.com" style="flex: 1; padding: 0.9rem 1.25rem; background: transparent; border: none; color: var(--text); font-family: inherit; font-size: 16px; outline: none;">
+                    <button id="fallbackBtn" style="padding: 0.9rem 1.25rem; background: linear-gradient(135deg, var(--emerald), #059669); color: white; border-top: 1px solid var(--border); border: none; border-top: 1px solid var(--border); font-family: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer; width: 100%;">Send My Audit</button>
+                </div>
             </div>
+            <p id="fallbackSuccess" style="display: none; color: var(--emerald); font-weight: 600; margin-top: 1.25rem;">We'll email your audit within 24 hours.</p>
+            <p style="margin-top: 1.25rem;"><a id="retryLink" href="#" style="color: var(--emerald); font-size: 0.85rem;">Try another URL</a></p>
         </div>
-        <p id="fallbackSuccess" style="display: none; color: var(--emerald); font-weight: 600; margin-top: 1.25rem;">We'll email your audit within 24 hours.</p>
-        <p style="margin-top: 1.25rem;"><a id="retryLink" href="#" style="color: var(--emerald); font-size: 0.85rem;">Try another URL</a></p>
     </div>
 </div>
 
@@ -465,6 +540,11 @@
         document.getElementById('urlInput').focus();
     }
 
+    function updateLoadingStatus(message) {
+        var statusEl = document.getElementById('loadingStatus');
+        if (statusEl) statusEl.textContent = message;
+    }
+
     function runAudit() {
         var input = document.getElementById('urlInput').value;
         var url = normalizeUrl(input);
@@ -484,6 +564,9 @@
         var steps = document.querySelectorAll('.loading-steps li');
         for (var i = 0; i < steps.length; i++) steps[i].classList.remove('done');
 
+        // Initialize loading status
+        updateLoadingStatus('Estimated time: 20-30 seconds');
+
         // Call our Lighthouse backend API
         // Fast, accurate audits with no external dependencies
         // Use Render backend if deployed, otherwise use relative path for local dev
@@ -493,16 +576,20 @@
         var apiUrl = apiBase + '?url=' + encodeURIComponent(url);
 
         showStep(1);
+        updateLoadingStatus('Fetching page data...');
+
+        var startTime = Date.now();
 
         fetch(apiUrl).then(function(res) {
             showStep(2);
+            updateLoadingStatus('Analyzing SEO metrics...');
             if (res.status === 429) throw new Error('429');
             if (!res.ok) {
                 var errMsg = 'Could not analyze this website. ';
                 if (res.status === 400 || res.status === 404) {
                     errMsg += 'Please check the URL format and try again.';
                 } else if (res.status === 502 || res.status === 503) {
-                    errMsg += 'Our analyzer is temporarily unavailable. Please try again in a moment.';
+                    errMsg += 'Our analyzer is temporarily at capacity due to high demand. Try again in a moment.';
                 } else {
                     errMsg += 'Please try again.';
                 }
@@ -511,6 +598,7 @@
             return res.json();
         }).then(function(data) {
             showStep(3);
+            updateLoadingStatus('Processing results...');
 
             // Parse Lighthouse response format
             var categories = data.categories || {};
@@ -535,6 +623,7 @@
             var projectedSeo = Math.min(100, seoScore + Math.round(failCount * 3.5) + 8);
 
             showStep(4);
+            updateLoadingStatus('Displaying your results...');
 
             setTimeout(function() {
                 document.getElementById('loadingSection').classList.remove('active');
@@ -598,9 +687,11 @@
             var msg = document.getElementById('errorMsg');
             var isRateLimit = (err.message || '').indexOf('429') !== -1 ||
                              (err.message || '').indexOf('Quota') !== -1 ||
-                             (err.message || '').indexOf('rate') !== -1;
+                             (err.message || '').indexOf('rate') !== -1 ||
+                             (err.message || '').indexOf('capacity') !== -1 ||
+                             (err.message || '').indexOf('high demand') !== -1;
             if (isRateLimit) {
-                msg.textContent = 'Our instant analyzer is temporarily at capacity due to high demand.';
+                msg.textContent = 'Our instant analyzer is at capacity due to high demand. We\'ll send you a comprehensive manual audit within 24 hours instead — free.';
             } else {
                 msg.textContent = err.message || 'We couldn\'t reach that website. Please check the URL and try again.';
             }
