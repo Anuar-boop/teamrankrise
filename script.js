@@ -100,15 +100,6 @@
             });
         }
 
-        // CTA box entrance
-        var ctaBox = document.querySelector('.cta-box');
-        if (ctaBox) {
-            gsap.from(ctaBox, {
-                scrollTrigger: { trigger: ctaBox, start: 'top 85%' },
-                y: 40, opacity: 0, duration: 0.9, ease: 'power2.out'
-            });
-        }
-
         // --- Horizontal Scroll Pin (Results Section) ---
         var hscrollSection = document.getElementById('results-section');
         var hscrollTrack = document.getElementById('hscrollTrack');
