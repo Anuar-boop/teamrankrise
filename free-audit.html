@@ -713,6 +713,17 @@
     document.getElementById('urlInput').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') runAudit();
     });
+
+    // Auto-run audit if ?domain= parameter is present (from cold email links)
+    var params = new URLSearchParams(window.location.search);
+    var domainParam = params.get('domain') || params.get('url') || params.get('site');
+    if (domainParam) {
+        var prefill = domainParam.trim();
+        if (!/^https?:\/\//i.test(prefill)) prefill = 'https://' + prefill;
+        document.getElementById('urlInput').value = prefill;
+        // Small delay so the page renders first
+        setTimeout(runAudit, 500);
+    }
     document.getElementById('fallbackBtn').addEventListener('click', function() {
         var email = document.getElementById('fallbackEmail').value.trim();
         if (!email || email.indexOf('@') === -1) { document.getElementById('fallbackEmail').focus(); return; }
