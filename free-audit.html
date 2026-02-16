@@ -255,9 +255,19 @@
 </div>
 
 <div class="audit-error container" id="errorSection">
-    <p style="font-size: 1.125rem; font-weight: 600;">Unable to analyze this website</p>
-    <p id="errorMsg" style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem;"></p>
-    <p style="margin-top: 1.5rem;"><a id="retryLink" href="#" style="color: var(--emerald);">Try another URL</a></p>
+    <div style="max-width: 480px; margin: 0 auto; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 2.5rem; text-align: center;">
+        <p style="font-size: 1.125rem; font-weight: 600; color: var(--text);">We'll Send Your Audit Report</p>
+        <p id="errorMsg" style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem;"></p>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">Drop your email and we'll send a full SEO audit within 24 hours — free.</p>
+        <div id="fallbackForm" style="margin-top: 1.25rem;">
+            <div style="display: flex; gap: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border);">
+                <input type="email" id="fallbackEmail" placeholder="you@business.com" style="flex: 1; padding: 0.85rem 1.25rem; background: transparent; border: none; color: var(--text); font-family: inherit; font-size: 0.95rem; outline: none;">
+                <button id="fallbackBtn" style="padding: 0.85rem 1.5rem; background: linear-gradient(135deg, var(--emerald), #059669); color: white; border: none; font-family: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap;">Send My Audit</button>
+            </div>
+        </div>
+        <p id="fallbackSuccess" style="display: none; color: var(--emerald); font-weight: 600; margin-top: 1.25rem;">We'll email your audit within 24 hours.</p>
+        <p style="margin-top: 1.25rem;"><a id="retryLink" href="#" style="color: var(--emerald); font-size: 0.85rem;">Try another URL</a></p>
+    </div>
 </div>
 
 <section class="audit-results container" id="resultsSection">
@@ -482,6 +492,7 @@
 
         fetch(apiUrl).then(function(res) {
             showStep(2);
+            if (res.status === 429) throw new Error('429');
             if (!res.ok) throw new Error('Google could not analyze this website. It may be blocking automated requests.');
             return res.json();
         }).then(function(data) {
@@ -550,8 +561,34 @@
 
         }).catch(function(err) {
             document.getElementById('loadingSection').classList.remove('active');
-            document.getElementById('errorSection').classList.add('active');
-            document.getElementById('errorMsg').textContent = err.message || 'Something went wrong. Please try again.';
+
+            // Still capture the lead even on error
+            try {
+                var formData = new FormData();
+                formData.append('domain', domain);
+                formData.append('url', url);
+                formData.append('seo_score', 'API_ERROR');
+                formData.append('issues_found', 'pending_manual');
+                formData.append('_subject', 'Audit Lead (API limit): ' + domain);
+                formData.append('_template', 'table');
+                fetch('https://formsubmit.co/ajax/alex@teamrankrise.com', {
+                    method: 'POST',
+                    body: formData
+                }).catch(function() {});
+            } catch(e2) {}
+
+            // Show friendly fallback instead of error
+            var errSection = document.getElementById('errorSection');
+            errSection.classList.add('active');
+            var msg = document.getElementById('errorMsg');
+            var isRateLimit = (err.message || '').indexOf('429') !== -1 ||
+                             (err.message || '').indexOf('Quota') !== -1 ||
+                             (err.message || '').indexOf('rate') !== -1;
+            if (isRateLimit) {
+                msg.textContent = 'Our instant analyzer is temporarily at capacity due to high demand.';
+            } else {
+                msg.textContent = err.message || 'We couldn\'t reach that website. Please check the URL and try again.';
+            }
             btn.disabled = false;
             btn.textContent = 'Analyze My Site';
         });
@@ -561,6 +598,19 @@
     document.getElementById('retryLink').addEventListener('click', function(e) { e.preventDefault(); resetAudit(); });
     document.getElementById('urlInput').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') runAudit();
+    });
+    document.getElementById('fallbackBtn').addEventListener('click', function() {
+        var email = document.getElementById('fallbackEmail').value.trim();
+        if (!email || email.indexOf('@') === -1) { document.getElementById('fallbackEmail').focus(); return; }
+        var formData = new FormData();
+        formData.append('email', email);
+        formData.append('domain', document.getElementById('loadingDomain').textContent);
+        formData.append('request', 'manual_audit');
+        formData.append('_subject', 'Manual Audit Request: ' + document.getElementById('loadingDomain').textContent);
+        formData.append('_template', 'table');
+        fetch('https://formsubmit.co/ajax/alex@teamrankrise.com', { method: 'POST', body: formData }).catch(function() {});
+        document.getElementById('fallbackForm').style.display = 'none';
+        document.getElementById('fallbackSuccess').style.display = 'block';
     });
 })();
 </script>
