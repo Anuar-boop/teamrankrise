@@ -53,51 +53,63 @@
         // Staggered bento cells
         var bentoGrid = document.querySelector('.bento-grid');
         if (bentoGrid) {
-            gsap.from('.bento-cell', {
-                scrollTrigger: {
-                    trigger: bentoGrid,
-                    start: 'top 80%'
-                },
-                y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power2.out'
-            });
+            gsap.fromTo('.bento-cell',
+                { y: 40, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: bentoGrid, start: 'top 80%' },
+                    y: 0, opacity: 1, duration: 0.7, stagger: 0.1, ease: 'power2.out'
+                }
+            );
         }
 
         // Staggered timeline steps
         var timeline = document.querySelector('.timeline');
         if (timeline) {
-            gsap.from('.timeline-step', {
-                scrollTrigger: {
-                    trigger: timeline,
-                    start: 'top 80%'
-                },
-                y: 30, opacity: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out'
-            });
+            gsap.fromTo('.timeline-step',
+                { y: 30, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: timeline, start: 'top 80%' },
+                    y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power2.out'
+                }
+            );
         }
 
         // Problem section — editorial text reveals
         var problemContent = document.querySelector('.problem-content');
         if (problemContent) {
-            gsap.from('.problem-headline', {
-                scrollTrigger: { trigger: problemContent, start: 'top 82%' },
-                y: 30, opacity: 0, duration: 0.8, ease: 'power2.out'
-            });
-            gsap.from('.problem-text', {
-                scrollTrigger: { trigger: problemContent, start: 'top 72%' },
-                y: 25, opacity: 0, duration: 0.7, stagger: 0.15, ease: 'power2.out'
-            });
-            gsap.from('.problem-list li', {
-                scrollTrigger: { trigger: '.problem-list', start: 'top 85%' },
-                x: -20, opacity: 0, duration: 0.5, stagger: 0.12, ease: 'power2.out'
-            });
+            gsap.fromTo('.problem-headline',
+                { y: 30, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: problemContent, start: 'top 82%' },
+                    y: 0, opacity: 1, duration: 0.8, ease: 'power2.out'
+                }
+            );
+            gsap.fromTo('.problem-text',
+                { y: 25, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: problemContent, start: 'top 72%' },
+                    y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'power2.out'
+                }
+            );
+            gsap.fromTo('.problem-list li',
+                { x: -20, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: '.problem-list', start: 'top 85%' },
+                    x: 0, opacity: 1, duration: 0.5, stagger: 0.12, ease: 'power2.out'
+                }
+            );
         }
 
         // Blog cards stagger
         var blogGrid = document.querySelector('.blog-grid');
         if (blogGrid) {
-            gsap.from('.blog-card', {
-                scrollTrigger: { trigger: blogGrid, start: 'top 82%' },
-                y: 30, opacity: 0, duration: 0.6, stagger: 0.12, ease: 'power2.out'
-            });
+            gsap.fromTo('.blog-card',
+                { y: 30, opacity: 0 },
+                {
+                    scrollTrigger: { trigger: blogGrid, start: 'top 82%' },
+                    y: 0, opacity: 1, duration: 0.6, stagger: 0.12, ease: 'power2.out'
+                }
+            );
         }
 
         // --- Horizontal Scroll Pin (Results Section) ---
