@@ -238,7 +238,7 @@
                 <input type="url" id="urlInput" placeholder="https://yourbusiness.com" autocomplete="url" autofocus>
                 <button id="analyzeBtn">Analyze My Site</button>
             </div>
-            <p class="audit-note">100% free. No signup required. Results in ~15 seconds.</p>
+            <p class="audit-note">100% free. No signup required. Results in ~20-30 seconds.</p>
         </div>
     </div>
 </section>
@@ -484,24 +484,35 @@
         var steps = document.querySelectorAll('.loading-steps li');
         for (var i = 0; i < steps.length; i++) steps[i].classList.remove('done');
 
-        // Call our backend API proxy instead of Google directly
-        // This keeps the API key secure and enables proper error handling
-        var apiUrl = '/api/pagespeed?url=' + encodeURIComponent(url);
+        // Call our Lighthouse backend API
+        // Fast, accurate audits with no external dependencies
+        var apiUrl = '/api/audit?url=' + encodeURIComponent(url);
 
         showStep(1);
 
         fetch(apiUrl).then(function(res) {
             showStep(2);
             if (res.status === 429) throw new Error('429');
-            if (!res.ok) throw new Error('Google could not analyze this website. It may be blocking automated requests.');
+            if (!res.ok) {
+                var errMsg = 'Could not analyze this website. ';
+                if (res.status === 400 || res.status === 404) {
+                    errMsg += 'Please check the URL format and try again.';
+                } else if (res.status === 502 || res.status === 503) {
+                    errMsg += 'Our analyzer is temporarily unavailable. Please try again in a moment.';
+                } else {
+                    errMsg += 'Please try again.';
+                }
+                throw new Error(errMsg);
+            }
             return res.json();
         }).then(function(data) {
             showStep(3);
 
-            var categories = (data.lighthouseResult && data.lighthouseResult.categories) || {};
-            var seoScore = Math.round((categories.seo && categories.seo.score || 0) * 100);
-            var perfScore = Math.round((categories.performance && categories.performance.score || 0) * 100);
-            var audits = (data.lighthouseResult && data.lighthouseResult.audits) || {};
+            // Parse Lighthouse response format
+            var categories = data.categories || {};
+            var seoScore = categories.seo || 0;
+            var perfScore = categories.performance || 0;
+            var audits = data.audits || {};
 
             var issues = [];
             var keys = Object.keys(ISSUE_MAP);

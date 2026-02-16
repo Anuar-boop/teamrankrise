@@ -1,0 +1,27 @@
+{
+  "name": "rankrise-audit-backend",
+  "version": "2.0.0",
+  "description": "RankRise SEO & Performance Audit Tool - Lighthouse Backend",
+  "main": "server-lighthouse.js",
+  "scripts": {
+    "start": "node server-lighthouse.js",
+    "dev": "node server-lighthouse.js",
+    "install-deps": "npm install"
+  },
+  "keywords": [
+    "seo",
+    "audit",
+    "lighthouse",
+    "performance",
+    "accessibility"
+  ],
+  "author": "RankRise Team",
+  "license": "MIT",
+  "dependencies": {
+    "lighthouse": "^11.4.0",
+    "chrome-launcher": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
