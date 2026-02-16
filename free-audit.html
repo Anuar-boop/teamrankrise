@@ -484,9 +484,9 @@
         var steps = document.querySelectorAll('.loading-steps li');
         for (var i = 0; i < steps.length; i++) steps[i].classList.remove('done');
 
-        var apiUrl = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' +
-            encodeURIComponent(url) +
-            '&category=seo&category=performance&category=accessibility&category=best-practices&strategy=mobile';
+        // Call our backend API proxy instead of Google directly
+        // This keeps the API key secure and enables proper error handling
+        var apiUrl = '/api/pagespeed?url=' + encodeURIComponent(url);
 
         showStep(1);
 
