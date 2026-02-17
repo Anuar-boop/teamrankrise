@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Markup for Local SEO: The Complete Implementation Guide — RankRise</title>
+    <meta name="description" content="Master schema markup for local SEO. Learn LocalBusiness, Service, Review, and FAQ schemas to boost rankings, rich snippets, and click-through rates.">
+    <link rel="canonical" href="https://teamrankrise.com/blog/schema-markup-local-seo.html">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:title" content="Schema Markup for Local SEO: The Complete Implementation Guide">
+    <meta property="og:description" content="Master schema markup for local SEO with LocalBusiness, Service, Review, and FAQ schemas.">
+    <meta property="og:url" content="https://teamrankrise.com/blog/schema-markup-local-seo.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://teamrankrise.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Schema Markup for Local SEO">
+    <meta name="twitter:description" content="LocalBusiness, Service, and Review schemas for local search visibility.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <noscript><style>.reveal{opacity:1;transform:none;}</style></noscript>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Schema Markup for Local SEO: The Complete Implementation Guide",
+        "description": "Master schema markup for local SEO with LocalBusiness, Service, Review, and FAQ schemas.",
+        "author": {"@type": "Person", "name": "Alex"},
+        "publisher": {"@type": "Organization", "name": "RankRise SEO", "url": "https://teamrankrise.com"},
+        "datePublished": "2026-02-17",
+        "mainEntityOfPage": "https://teamrankrise.com/blog/schema-markup-local-seo.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://teamrankrise.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://teamrankrise.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Schema Markup for Local SEO", "item": "https://teamrankrise.com/blog/schema-markup-local-seo.html"}
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<svg class="noise-overlay" width="100%" height="100%">
+    <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+    <rect width="100%" height="100%" filter="url(#noise)"/>
+</svg>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18L8 6h1.5L13 14l3-10h1.5" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            RankRise
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/case-studies.html">Results</a></li>
+            <li><a href="/blog/" class="active">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li class="nav-cta"><a href="tel:+16036058532" class="btn-nav">Call (603) 605-8532</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="page-header">
+    <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>Schema Markup</span></div>
+        <span class="tag">Technical SEO</span>
+        <h1>Schema Markup for Local SEO: The Complete Implementation Guide</h1>
+        <div class="blog-card-meta">
+            <span>Alex</span>
+            <span>February 17, 2026</span>
+            <span>14 min read</span>
+        </div>
+    </div>
+</section>
+
+<article class="section blog-content">
+    <div class="container" style="max-width:780px;">
+        <div class="reveal">
+            <p class="intro-text">Schema markup is the language Google speaks. It's structured data that tells search engines exactly what your business is, what you do, where you are, and what customers think. Without it, Google makes educated guesses. With it, you're giving Google a cheat sheet.</p>
+
+            <p>For local businesses, schema markup is one of the highest-ROI technical SEO investments you can make. A single line of code can enable rich snippets, knowledge panels, and carousel results — all of which dramatically increase clicks.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>What Is Schema Markup?</h2>
+
+            <p>Schema markup is structured data in a format called JSON-LD. It's code you add to your website's HTML that provides context about your content to search engines.</p>
+
+            <p>Instead of Google reading "John's Plumbing · 5 stars · 24/7 emergency service" and guessing what's what, you tell it explicitly: this is a LocalBusiness. The business is a Plumber. It has 5 stars. It offers emergency service.</p>
+
+            <p>Schema markup doesn't directly change your rankings, but it:</p>
+            <ul>
+                <li>Enables rich snippets (star ratings, opening hours, address displayed directly in search results)</li>
+                <li>Helps Google understand your business better, improving matching to relevant searches</li>
+                <li>Increases click-through rates (rich snippets get clicked 32% more than plain links)</li>
+                <li>Powers knowledge panels and special search features</li>
+            </ul>
+        </div>
+
+        <div class="reveal">
+            <h2>Why Schema Matters for Local SEO</h2>
+
+            <p>Google's core job is to understand intent. When someone searches "plumber near me," Google needs to know:</p>
+            <ul>
+                <li>Who are businesses (not random websites)</li>
+                <li>What service they provide (plumbing, not sales)</li>
+                <li>Where they're located (and is it near the searcher)</li>
+                <li>Are they trustworthy (reviews, ratings, credentials)</li>
+            </ul>
+
+            <p>Schema markup answers all these questions for Google instantly. Without it, Google has to infer from your website content, your GBP listing, and external signals. With it, you're eliminating ambiguity.</p>
+
+            <p>The result: higher confidence matching, better Local Pack rankings, and more rich snippet opportunities.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>LocalBusiness Schema: The Foundation</h2>
+
+            <p>Every local business website needs LocalBusiness schema. It tells Google the essential facts about your business:</p>
+
+            <ul>
+                <li>Name</li>
+                <li>Address</li>
+                <li>Phone number</li>
+                <li>Website</li>
+                <li>Service area (cities served)</li>
+                <li>Rating and review count</li>
+                <li>Hours of operation</li>
+                <li>Business type (should match your GBP category)</li>
+            </ul>
+
+            <p>When schema is present and rich snippets are enabled, customers see your hours, phone number, and rating directly in the search results — without needing to click your website.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Service Schema: Explain What You Do</h2>
+
+            <p>Service schema describes specific services you offer. A plumber doesn't just do "plumbing" — they do emergency plumbing, drain cleaning, water heater installation, etc.</p>
+
+            <p>Each service can have its own schema block with:</p>
+            <ul>
+                <li>Service name</li>
+                <li>Description</li>
+                <li>Price (optional, but helpful)</li>
+                <li>URL to that service's page</li>
+                <li>Who provides it (your business LocalBusiness reference)</li>
+            </ul>
+
+            <p>Service schema helps with topical relevance. If you have a dedicated emergency plumbing page with Service schema, Google knows that page is specifically about emergency plumbing — not just "plumbing content."</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Review and AggregateRating Schema</h2>
+
+            <p>These schemas make your reviews and ratings visible in search results:</p>
+
+            <h3>AggregateRating</h3>
+            <p>Displays your overall rating and review count. A plumber with 4.8 stars / 47 reviews will show that in search results, dramatically increasing click-through rate.</p>
+
+            <h3>Review Schema</h3>
+            <p>Marks up individual reviews. If you want to display a specific customer testimonial on your website, Review schema can make it eligible for rich snippets.</p>
+
+            <p>Important: The reviews in your schema should come from your actual review sources (Google, Yelp, etc.) or be from real customers on your website. Fabricated reviews violate Google's policies.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>FAQ Schema: Answer Questions Upfront</h2>
+
+            <p>FAQ schema marks up frequently asked questions on your website. When a user searches a question related to your FAQ, Google may display your answer directly in the search results — a "position zero" opportunity.</p>
+
+            <p>Example: Plumber with FAQ "How much does emergency plumbing cost?" When someone searches that question, your answer might appear above organic results.</p>
+
+            <p>Each FAQ block has a question and answer. Google will display these in a collapsible FAQ carousel in rich snippets.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>BreadcrumbList Schema: Improve Navigation Visibility</h2>
+
+            <p>BreadcrumbList schema displays your site's navigation hierarchy in search results. For example:</p>
+
+            <p>Home > Services > Emergency Plumbing</p>
+
+            <p>This small element:</p>
+            <ul>
+                <li>Helps Google understand your site structure</li>
+                <li>Improves click-through rate (breadcrumbs are visible in SERPs)</li>
+                <li>Provides internal linking signals</li>
+            </ul>
+
+            <p>Even better: users can click the breadcrumb links directly from search results to navigate your site.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>How to Implement Schema Markup: JSON-LD</h2>
+
+            <p>The best format for schema markup is JSON-LD (JavaScript Object Notation for Linked Data). It's simple, flexible, and Google's preferred format.</p>
+
+            <p>JSON-LD goes in your website's <code>&lt;head&gt;</code> section inside <code>&lt;script type="application/ld+json"&gt;</code> tags.</p>
+
+            <h3>Example: LocalBusiness Schema</h3>
+            <p>Here's a basic LocalBusiness schema for a plumbing company:</p>
+
+            <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "John's 24/7 Plumbing",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Main St",
+    "addressLocality": "Portsmouth",
+    "addressRegion": "NH",
+    "postalCode": "03801"
+  },
+  "telephone": "(603) 555-0123",
+  "url": "https://johnplumbing.com",
+  "image": "https://johnplumbing.com/logo.png",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "47"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "09:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday"],
+      "opens": "10:00",
+      "closes": "14:00"
+    }
+  ]
+}</code></pre>
+
+            <p>This tells Google your business name, exact location, phone, rating, and hours — all in a format Google can parse perfectly.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Testing Your Schema: Rich Results Test</h2>
+
+            <p>Don't just implement schema and hope it works. Use Google's Rich Results Test (formerly Structured Data Testing Tool):</p>
+
+            <ol>
+                <li>Go to <a href="https://search.google.com/test/rich-results" target="_blank">search.google.com/test/rich-results</a></li>
+                <li>Enter your website URL or paste HTML</li>
+                <li>Google will parse your schema and show you what's valid, what's missing, and what's wrong</li>
+                <li>Fix any errors and re-test</li>
+            </ol>
+
+            <p>The tool will also show you exactly how your rich snippets will appear in search results. This is invaluable for making sure your schema looks good before it goes live.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Common Schema Markup Mistakes</h2>
+
+            <h3>Missing LocalBusiness Type</h3>
+            <p>Using generic "Organization" instead of "LocalBusiness" loses geographic signals. Always use the most specific type available.</p>
+
+            <h3>Wrong Business Type</h3>
+            <p>Your schema @type should match your GBP category. A dentist should use "Dentist" type, not just "LocalBusiness."</p>
+
+            <h3>Incomplete Address Information</h3>
+            <p>Missing postal code or region weakens your local signals. Google uses full address to verify location and show you in local searches.</p>
+
+            <h3>Fake or Outdated Reviews</h3>
+            <p>Fabricating reviews violates policies and damages trust. Only include real reviews with real customer data.</p>
+
+            <h3>Inconsistent Business Information</h3>
+            <p>If your schema says "Portsmouth, NH" but your GBP says "Portsmouth, Maine," Google gets confused. All business data across schema, website, and GBP must match.</p>
+
+            <h3>Invalid Phone Numbers</h3>
+            <p>Use international format: +1 (603) 555-0123. Malformed phone numbers won't display properly.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Advanced Schema: Event, Product, AggregateRating</h2>
+
+            <p>Beyond the basics, consider these schema types based on your business:</p>
+
+            <h3>Event Schema</h3>
+            <p>If you host events (webinars, workshops, grand openings), Event schema displays event details in rich snippets: date, time, location, description, ticket link. Events get a carousel in search results.</p>
+
+            <h3>Product Schema</h3>
+            <p>If you sell physical products or digital services (contractors selling materials, consultants selling packages), Product schema shows name, price, rating, availability. Increases e-commerce conversions directly from SERPs.</p>
+
+            <h3>Organization Schema</h3>
+            <p>For multi-location businesses, Organization schema at the homepage level describes the parent company, while LocalBusiness schema exists on each location page. This helps Google understand your structure.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Schema & Link to Services</h2>
+
+            <p>Your schema markup should reinforce your <a href="/services.html#technical">technical SEO strategy</a>. Each service page should have its own Service schema. Your homepage should have LocalBusiness schema. Category pages should link back to your <a href="/services.html">service offerings</a>.</p>
+
+            <p>This creates a coherent information architecture that Google understands immediately.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Implementation Checklist</h2>
+
+            <ul>
+                <li>Add LocalBusiness schema to homepage with complete address, phone, hours</li>
+                <li>Add AggregateRating schema with your current rating and review count</li>
+                <li>Add Service schema for 3-5 main services</li>
+                <li>Add BreadcrumbList schema to all pages</li>
+                <li>Add FAQ schema if you have an FAQ section</li>
+                <li>Test all schema with Rich Results Test</li>
+                <li>Monitor Google Search Console for schema issues</li>
+                <li>Update schema quarterly (rating changes, new services, hours changes)</li>
+                <li>Ensure schema matches GBP data and website content</li>
+            </ul>
+        </div>
+
+        <div class="reveal">
+            <h2>Schema Maintenance: Keep It Fresh</h2>
+
+            <p>Schema isn't a set-it-and-forget-it task. Your rating changes. You add new services. Hours change seasonally.</p>
+
+            <p>Review and update your schema quarterly:</p>
+            <ul>
+                <li>Is your AggregateRating current? Update it when your rating changes by 0.1 or more.</li>
+                <li>Are your hours still accurate? Update seasonal hours before the season changes.</li>
+                <li>Have you added new services? Add Service schema for them.</li>
+                <li>Is your address still correct? Update LocalBusiness address if you move.</li>
+            </ul>
+
+            <p>Monitor Google Search Console for schema errors. If Google reports a problem, fix it immediately.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Bottom Line</h2>
+
+            <p>Schema markup is the bridge between what you want Google to know and what it actually understands. Without it, you're leaving visibility on the table. With it, you're giving Google a perfectly clear signal about your business, making it easier for the right customers to find you.</p>
+
+            <p>Start with LocalBusiness schema today. Add Service schema next week. Test with Rich Results Test this weekend. Small investments in schema markup compound into significant local search visibility over time.</p>
+        </div>
+
+        <div class="cta-box reveal">
+            <h3>Need Help Implementing Schema Markup?</h3>
+            <p>We'll audit your current schema, implement missing markup, and ensure everything validates correctly. Free consultation included.</p>
+            <a href="/free-audit.html" class="btn">Get Your Free Technical SEO Audit →</a>
+        </div>
+    </div>
+</article>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18L8 6h1.5L13 14l3-10h1.5" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> RankRise</a>
+                <p>America's local search specialists.</p>
+            </div>
+            <div><h4>Services</h4><ul><li><a href="/services.html#local-seo">Local SEO</a></li><li><a href="/services.html#gbp">GBP Optimization</a></li><li><a href="/services.html#on-page">On-Page SEO</a></li><li><a href="/services.html#technical">Technical SEO</a></li><li><a href="/services.html#audit">SEO Audits</a></li></ul></div>
+            <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/case-studies.html">Case Studies</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contact.html">Contact</a></li></ul></div>
+            <div><h4>Top Cities</h4><ul><li><a href="/seo-new-york.html">New York</a></li><li><a href="/seo-los-angeles.html">Los Angeles</a></li><li><a href="/seo-houston.html">Houston</a></li><li><a href="/seo-phoenix.html">Phoenix</a></li><li><a href="/cities.html">All Cities →</a></li></ul></div>
+            <div><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li></ul><p class="footer-contact"><a href="tel:+16036058532">(603) 605-8532</a><br>alex@teamrankrise.com</p></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 RankRise SEO</span><span><a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a></span></div>
+    </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
