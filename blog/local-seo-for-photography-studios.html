@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local SEO for Photography Studios | RankRise SEO</title>
+    <meta name="description" content="Complete local SEO guide for photography studios and portrait photographers. Dominate Google search with GBP optimization, portfolio SEO, reviews, and booking strategies.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #08090a;
+            color: #e8eaed;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' result='noise' /%3E%3C/filter%3E%3Crect width='400' height='400' fill='%23e8eaed' opacity='0.02' filter='url(%23noise)' /%3E%3C/svg%3E");
+            background-size: 400px 400px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            background: rgba(8, 9, 10, 0.95);
+            border-bottom: 1px solid #10b981;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #10b981;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #e8eaed;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #10b981;
+        }
+
+        .cta-btn {
+            background: #10b981;
+            color: #08090a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .blog-header {
+            padding: 4rem 0 2rem;
+            border-bottom: 1px solid #10b981;
+            margin-bottom: 2rem;
+        }
+
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #10b981;
+            line-height: 1.2;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: #a0a9b8;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        article {
+            margin-bottom: 3rem;
+        }
+
+        article h2 {
+            font-size: 1.8rem;
+            color: #10b981;
+            margin: 2rem 0 1rem;
+            padding-top: 1rem;
+        }
+
+        article h3 {
+            font-size: 1.3rem;
+            color: #e8eaed;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        article p {
+            margin-bottom: 1rem;
+            color: #d0d5dd;
+        }
+
+        article ul,
+        article ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        article li {
+            margin-bottom: 0.5rem;
+            color: #d0d5dd;
+        }
+
+        .highlight {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight strong {
+            color: #10b981;
+        }
+
+        footer {
+            background: #0f1117;
+            border-top: 1px solid #10b981;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #10b981;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #a0a9b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #10b981;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #30363d;
+            padding-top: 2rem;
+            text-align: center;
+            color: #6e7681;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info p {
+            color: #a0a9b8;
+            margin: 0.5rem 0;
+        }
+
+        .contact-info a {
+            color: #10b981;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+
+            article h2 {
+                font-size: 1.4rem;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Local SEO for Photography Studios: Book More Sessions in 2026",
+        "description": "Master local SEO for photography studios and portrait photographers. Learn GBP optimization, portfolio SEO, image optimization, review strategies, and seasonal booking tactics.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://teamrankrise.com/og-photography-studios-seo.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-02-17",
+        "dateModified": "2026-02-17",
+        "author": {
+            "@type": "Person",
+            "name": "Alex",
+            "url": "https://teamrankrise.com/about.html"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "RankRise SEO",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://teamrankrise.com/logo.svg",
+                "width": 250,
+                "height": 60
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://teamrankrise.com/blog/local-seo-for-photography-studios.html"
+        }
+    }
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">RankRise</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/contact.html" class="cta-btn">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="blog-header">
+            <h1>Local SEO for Photography Studios: Book More Sessions in 2026</h1>
+            <div class="blog-meta">
+                <span>By Alex</span>
+                <span>February 17, 2026</span>
+                <span>~14 min read</span>
+            </div>
+            <span class="tag">Industry Guide</span>
+        </div>
+
+        <article>
+            <h2>Why Photography Studios Need Local SEO</h2>
+            <p>Photography is one of the most competitive local service industries. In any mid-sized city, there are dozens or even hundreds of photographers competing for the same weddings, family portraits, and commercial gigs. The difference between a fully booked calendar and an empty one often comes down to one thing: who shows up first when someone searches Google.</p>
+            <p>In 2026, 76% of people looking for a photographer start their search online. They search for "wedding photographer [city]," "family portraits near me," or "headshot photographer [neighborhood]." If your studio does not appear in those results, you are losing business to competitors who invested in local SEO, even if your work is objectively better.</p>
+            <p>Consider the economics: a single wedding photography package averages $3,000 to $8,000. A family portrait session runs $300 to $1,500. A commercial headshot session is $200 to $800. If local SEO brings you just 3-5 additional bookings per month, the annual revenue impact is $10,000 to $50,000 or more. That is not marketing fluff; that is a direct pipeline of revenue from people actively searching for exactly what you offer.</p>
+
+            <h2>How Photography Clients Search in 2026</h2>
+            <p>Understanding search behavior is the foundation of any effective SEO strategy. Photography searches have unique patterns that differ from other local services.</p>
+            <ul>
+                <li><strong>Event-driven urgency:</strong> Wedding and event photography searches have deadlines. These prospects are booking 6-18 months in advance, and once they book someone, that lead is gone forever</li>
+                <li><strong>Specialty-first searches:</strong> People search by photography type, not generically. "Newborn photographer" and "real estate photographer" are entirely separate markets with different competitors</li>
+                <li><strong>Visual evaluation:</strong> Before reading a word, prospects look at your photos. Google Images, your GBP gallery, and your website portfolio are evaluated in seconds</li>
+                <li><strong>Price comparison:</strong> "Wedding photographer cost [city]" and "family portrait prices near me" are among the highest-volume photography searches</li>
+                <li><strong>Style matching:</strong> Clients search for specific styles: "moody wedding photographer," "light and airy portrait photographer," "documentary-style photographer"</li>
+                <li><strong>Seasonal patterns:</strong> Engagement season (November-February) drives wedding photographer searches. Fall drives family portrait searches. Spring and summer drive graduation and senior portrait searches</li>
+            </ul>
+
+            <h2>Keyword Strategy for Photography Studios</h2>
+            <p>Your keyword strategy must be organized by photography specialty, because each specialty represents a distinct market with different competition and search volume.</p>
+
+            <h3>Wedding Photography Keywords</h3>
+            <ul>
+                <li>Wedding photographer [city]</li>
+                <li>Wedding photography [city] prices</li>
+                <li>Affordable wedding photographer [city]</li>
+                <li>Elopement photographer [city]</li>
+                <li>Engagement photographer [city]</li>
+                <li>Destination wedding photographer [state]</li>
+                <li>[Venue name] wedding photographer</li>
+            </ul>
+
+            <h3>Portrait and Family Photography Keywords</h3>
+            <ul>
+                <li>Family photographer [city]</li>
+                <li>Newborn photographer [city]</li>
+                <li>Senior portrait photographer [city]</li>
+                <li>Maternity photographer [city]</li>
+                <li>Headshot photographer [city]</li>
+                <li>Pet photographer [city]</li>
+                <li>Holiday family photos [city]</li>
+            </ul>
+
+            <h3>Commercial Photography Keywords</h3>
+            <ul>
+                <li>Commercial photographer [city]</li>
+                <li>Product photographer [city]</li>
+                <li>Real estate photographer [city]</li>
+                <li>Corporate headshot photographer [city]</li>
+                <li>Food photographer [city]</li>
+                <li>Brand photography [city]</li>
+            </ul>
+
+            <h3>Educational and Research Keywords</h3>
+            <ul>
+                <li>How much does a wedding photographer cost</li>
+                <li>What to wear for family photos</li>
+                <li>Best locations for engagement photos in [city]</li>
+                <li>How to prepare for a headshot session</li>
+                <li>When to book a wedding photographer</li>
+                <li>Indoor vs outdoor family photos</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Pro Tip:</strong> Venue-specific keywords are an untapped goldmine for wedding photographers. "Wedding photographer at [Popular Venue Name]" has low competition and extremely high intent. Someone searching this has already booked the venue and needs a photographer who knows it well. Create a dedicated page for each venue you have shot at, with sample photos and a description of working at that location.
+            </div>
+
+            <h2>Google Business Profile for Photography Studios</h2>
+            <p>Your GBP is your digital storefront. For photographers, the visual quality of your GBP listing directly determines whether prospects click through to your website or scroll to the next result.</p>
+
+            <h3>Optimizing Your GBP Profile</h3>
+            <ul>
+                <li><strong>Primary category:</strong> Choose the most specific category: "Wedding Photographer," "Portrait Photographer," or "Photography Studio" depending on your primary focus</li>
+                <li><strong>Secondary categories:</strong> Add all applicable: "Event Photographer," "Commercial Photographer," "Boudoir Photographer," "Photo Booth Service"</li>
+                <li><strong>Description:</strong> 750-word description covering your specialties, shooting style, experience, studio amenities, service area, and what makes your studio unique. Include city names naturally</li>
+                <li><strong>Services:</strong> List every photography service with descriptions and starting prices: Wedding Photography, Engagement Sessions, Family Portraits, Newborn Sessions, Senior Portraits, Headshots, Commercial/Product, Events</li>
+                <li><strong>Attributes:</strong> "By appointment," "Online booking available," "Studio space," "On-location available," "Same-day turnaround" (if applicable)</li>
+            </ul>
+
+            <h3>Photo Strategy for Your GBP</h3>
+            <p>This is where you win or lose. Your GBP photos are the first portfolio anyone sees.</p>
+            <ul>
+                <li>Upload 30-50 of your absolute best images across all specialties</li>
+                <li>Organize by category: weddings, portraits, families, commercial, headshots</li>
+                <li>Include studio interior and exterior photos (if you have a physical studio)</li>
+                <li>Add behind-the-scenes shots (builds personality and trust)</li>
+                <li>Upload 3-5 new photos weekly from recent sessions</li>
+                <li>Add 2-3 short videos: studio tour, session highlights reel, client testimonial</li>
+                <li>Name every file descriptively before upload: "wedding-photography-boston-harbor-hotel.jpg"</li>
+                <li>Choose your best single image as the cover photo (this appears in search results)</li>
+            </ul>
+
+            <h3>GBP Posting Calendar</h3>
+            <p>Post 3-4 times weekly:</p>
+            <ul>
+                <li>Session highlights with 2-3 best images from recent shoots</li>
+                <li>Client testimonials paired with their session photos</li>
+                <li>Seasonal promotions (mini sessions, holiday specials, back-to-school portraits)</li>
+                <li>Photography tips for clients ("What to wear for fall family photos")</li>
+                <li>Behind-the-scenes content from sessions and editing</li>
+                <li>Venue and location spotlights (great for wedding photographers)</li>
+            </ul>
+
+            <h2>Review Strategy for Photography Studios</h2>
+            <p>Reviews are critical for photographers because the service is deeply personal. Clients are trusting you to capture irreplaceable moments. They need to see that others had positive, stress-free experiences and loved their photos.</p>
+
+            <h3>Systematic Review Generation</h3>
+            <ul>
+                <li><strong>Gallery delivery:</strong> When you deliver the final photo gallery, include a review request in the same email. Clients are viewing their photos and emotions are at their peak</li>
+                <li><strong>Sneak peek moment:</strong> After sharing a sneak peek of 3-5 edited photos (typically 24-48 hours after the session), ask for a quick review while excitement is fresh</li>
+                <li><strong>Print order follow-up:</strong> When clients receive their prints, follow up with a satisfaction check and review link</li>
+                <li><strong>Wedding anniversary:</strong> For wedding clients, send a one-year anniversary email with a favorite photo from their wedding and a review request</li>
+                <li><strong>Referral prompt:</strong> When a client refers a friend, thank them and ask for a review if they have not left one</li>
+            </ul>
+
+            <h3>What to Encourage in Reviews</h3>
+            <p>Subtly guide clients to mention specific details that help with SEO and conversion:</p>
+            <ul>
+                <li>The type of session (wedding, family, headshots)</li>
+                <li>The location or venue</li>
+                <li>Your shooting style and personality</li>
+                <li>The quality of the final photos</li>
+                <li>The overall experience (ease of booking, communication, comfort level)</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Target:</strong> Aim for 50+ Google reviews with a 4.9+ star average. Photography is one of the most review-dependent industries. Studios with 50+ reviews book 3-4x more sessions than those with 10 or fewer. Each review compounds your credibility.
+            </div>
+
+            <h2>Content Marketing for Photography SEO</h2>
+            <p>Most photography websites are beautiful but SEO-dead. They have gorgeous galleries but zero written content for Google to index. This is the single biggest opportunity for photographers who invest in content.</p>
+
+            <h3>Essential Content for Photography Studios</h3>
+            <ul>
+                <li><strong>Session blog posts:</strong> Blog every session (or at least every other session) with 200-400 words of context, the client's story, the location, and 15-25 curated photos. This creates hundreds of indexed pages over time</li>
+                <li><strong>Location guides:</strong> "Best photo spots in [city]" "Top engagement session locations in [city]" "Hidden gem photography locations in [region]." These rank beautifully and attract prospects in the planning phase</li>
+                <li><strong>Venue guides:</strong> For wedding photographers, create a detailed guide for every venue you have shot: lighting conditions, best photo spots, timeline recommendations, and sample galleries</li>
+                <li><strong>Preparation guides:</strong> "What to wear for family photos" "How to prepare for your headshot session" "Wedding day photography timeline guide." These attract high-intent traffic</li>
+                <li><strong>Pricing guides:</strong> "How much does wedding photography cost in [city]?" "Portrait session pricing guide." Price-related content has enormous search volume and builds transparency trust</li>
+                <li><strong>Comparison content:</strong> "Wedding photography styles explained: documentary vs. traditional vs. fine art" "Digital vs. film photography: What is the difference?"</li>
+            </ul>
+
+            <h3>Image SEO: Your Secret Weapon</h3>
+            <p>As a photographer, you produce the one type of content Google Images craves: high-quality, original photos. Leverage this:</p>
+            <ul>
+                <li>Every image on your site needs a descriptive alt tag: "Family portrait session at Acadia National Park, Maine - fall colors"</li>
+                <li>Use keyword-rich file names: "newborn-photography-portland-maine.jpg" not "DSC_8472.jpg"</li>
+                <li>Implement image schema markup for your portfolio</li>
+                <li>Add EXIF data descriptions where supported</li>
+                <li>Create image sitemaps so Google discovers all your portfolio images</li>
+                <li>Google Image search drives 15-25% of traffic for optimized photography sites</li>
+            </ul>
+
+            <h2>Technical SEO for Photography Websites</h2>
+
+            <h3>The Page Speed Challenge</h3>
+            <p>Photography websites face a unique challenge: you need to showcase high-quality images, but those images can destroy your page speed. Here is how to solve it:</p>
+            <ul>
+                <li><strong>WebP format:</strong> Convert all portfolio images to WebP. Quality is indistinguishable from JPEG at 40-60% smaller file sizes</li>
+                <li><strong>Responsive images:</strong> Serve different image sizes based on screen size using the srcset attribute</li>
+                <li><strong>Lazy loading:</strong> Critical for gallery pages. Only load images as the user scrolls to them</li>
+                <li><strong>CDN delivery:</strong> Serve images from a CDN (Cloudflare, Imgix, Cloudinary) for faster global delivery</li>
+                <li><strong>Thumbnail galleries:</strong> Load thumbnails first, then high-res on click or hover</li>
+                <li><strong>Target:</strong> 70+ on Google PageSpeed Insights mobile. Most photography sites score 20-40 without optimization</li>
+            </ul>
+
+            <h3>Other Technical Must-Haves</h3>
+            <ul>
+                <li><strong>Mobile responsiveness:</strong> Gallery layouts must work beautifully on mobile. Test lightbox functionality on touch devices</li>
+                <li><strong>Schema markup:</strong> LocalBusiness, Photographer, and ImageGallery schema</li>
+                <li><strong>XML sitemap:</strong> Include all blog posts, gallery pages, and individual image URLs</li>
+                <li><strong>Internal linking:</strong> Link blog posts to relevant service pages and galleries. Link galleries to booking pages</li>
+                <li><strong>SSL certificate:</strong> HTTPS is mandatory, especially for booking forms</li>
+                <li><strong>Structured contact forms:</strong> Make it easy to inquire about specific session types with dropdown menus</li>
+            </ul>
+
+            <h2>Local Citation Building for Photography Studios</h2>
+
+            <h3>Priority Directories</h3>
+            <ul>
+                <li><strong>Google Business Profile</strong> (foundational)</li>
+                <li><strong>The Knot</strong> (essential for wedding photographers)</li>
+                <li><strong>WeddingWire / Zola</strong> (essential for wedding photographers)</li>
+                <li><strong>Yelp</strong> (claim, optimize, add best images)</li>
+                <li><strong>Thumbtack</strong> (generates leads across all photography types)</li>
+                <li><strong>PPA.com</strong> (Professional Photographers of America directory)</li>
+                <li><strong>Bark.com</strong></li>
+                <li><strong>Better Business Bureau</strong></li>
+                <li><strong>Local venue preferred vendor lists</strong> (build relationships with wedding venues, event spaces, and hotels)</li>
+                <li><strong>Local chamber of commerce</strong></li>
+                <li><strong>Facebook business page</strong></li>
+                <li><strong>Instagram</strong> (treated as a citation when linked from your website)</li>
+            </ul>
+
+            <h2>Common SEO Mistakes Photography Studios Make</h2>
+
+            <h3>Mistake #1: Flash/JS-Heavy Galleries With No Text</h3>
+            <p>A portfolio of 500 beautiful images with zero text content is invisible to Google. Search engines cannot evaluate photos the way humans do. You need descriptive titles, captions, alt text, and surrounding written content for every gallery page.</p>
+
+            <h3>Mistake #2: No Blog</h3>
+            <p>The most successful photography studios blog every single session. Over 2-3 years, this creates 200-400 indexed pages, each targeting a unique combination of session type, location, and keywords. The cumulative SEO effect is enormous. Photographers who blog consistently see 3-5x more organic traffic than those who do not.</p>
+
+            <h3>Mistake #3: Ignoring Wedding Venue SEO</h3>
+            <p>Every wedding venue in your area is a keyword opportunity. "Photographer at [Venue Name]" is searched by nearly every couple who books that venue. If you have shot there, create a dedicated page with your best photos from that venue and details about the location. This is one of the highest-converting keyword strategies for wedding photographers.</p>
+
+            <h3>Mistake #4: Unoptimized Images</h3>
+            <p>Uploading 5MB JPEG files directly from Lightroom to your website is catastrophic for page speed. Resize, compress, and convert to WebP before uploading. A site that loads in 2 seconds converts 3x more visitors than one that loads in 6 seconds.</p>
+
+            <h3>Mistake #5: No Seasonal Content Strategy</h3>
+            <p>Photography is deeply seasonal. If you publish a "Holiday mini sessions" blog post in November, it will not rank in time. Publish seasonal content 6-8 weeks before the season starts so Google has time to index and rank it. Plan your editorial calendar around: engagement season (Nov-Feb), spring (senior portraits, maternity), summer (weddings peak), fall (family portraits, holiday minis).</p>
+
+            <h2>Your 90-Day Photography Studio SEO Plan</h2>
+
+            <h3>Month 1: Foundation</h3>
+            <ul>
+                <li>Claim and optimize your Google Business Profile with 30+ best portfolio images</li>
+                <li>Claim listings on The Knot, WeddingWire, Yelp, and Thumbtack</li>
+                <li>Audit NAP consistency across all directories</li>
+                <li>Install Google Analytics 4 and Search Console</li>
+                <li>Conduct a full site speed audit and optimize all portfolio images to WebP</li>
+                <li>Add schema markup to your website</li>
+            </ul>
+
+            <h3>Month 2: Content and Reviews</h3>
+            <ul>
+                <li>Blog 6-8 recent sessions with full descriptions and optimized images</li>
+                <li>Create individual service pages for each photography specialty</li>
+                <li>Write 2 location or venue guide blog posts</li>
+                <li>Contact 25 past clients for Google and The Knot reviews</li>
+                <li>Post 12-16 GBP updates with session highlights</li>
+            </ul>
+
+            <h3>Month 3: Growth</h3>
+            <ul>
+                <li>Blog 6-8 more sessions</li>
+                <li>Create a comprehensive pricing guide page</li>
+                <li>Write 2 preparation guide articles ("What to wear for family photos")</li>
+                <li>Build location pages for top service areas</li>
+                <li>Continue review generation (target 3-5 new reviews per month)</li>
+                <li>Reach out to wedding venues about preferred vendor inclusion</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Expected Results (90 Days):</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li>+20-30 new Google reviews (average 4.9+ stars)</li>
+                    <li>+60-100% increase in GBP impressions</li>
+                    <li>Top 5 ranking for 5-10 specialty keywords in your city</li>
+                    <li>+50-80% increase in organic website traffic</li>
+                    <li>+5-10 new booking inquiries per month from organic search</li>
+                    <li>Significant increase in Google Images traffic</li>
+                </ul>
+            </div>
+
+            <h2>Turn Your Talent Into a Fully Booked Calendar</h2>
+            <p>Photography is a business where talent alone is not enough. The most talented photographer in your city can have an empty calendar if nobody finds them online. Meanwhile, good photographers with excellent SEO are fully booked year-round. The difference is visibility, not skill.</p>
+
+            <p>The studios thriving in 2026 are those who combine artistic excellence with strategic online presence. They blog every session, optimize every image, generate reviews consistently, and make it effortless for prospects to find and book them. This is not about selling out or becoming a marketer instead of an artist. It is about making sure the people who need your talent can find you.</p>
+
+            <p>If you are ready to stop relying on Instagram algorithms and start building a predictable stream of booking inquiries from people actively searching for a photographer in your area, we can help.</p>
+
+            <p><strong><a href="/free-audit.html" style="color: #10b981;">Get your free SEO audit</a> or <a href="/contact.html" style="color: #10b981;">schedule a strategy session</a> today. We will analyze your current online visibility and show you exactly how to become the most discoverable photography studio in your market.</strong></p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services.html#local-seo">Local SEO</a></li>
+                        <li><a href="/services.html#gbp">Google Business Profile</a></li>
+                        <li><a href="/services.html#on-page">On-Page SEO</a></li>
+                        <li><a href="/services.html#technical">Technical SEO</a></li>
+                        <li><a href="/services.html#audit">SEO Audit</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Top Cities</h4>
+                    <ul>
+                        <li><a href="/cities.html#new-york">New York</a></li>
+                        <li><a href="/cities.html#los-angeles">Los Angeles</a></li>
+                        <li><a href="/cities.html#houston">Houston</a></li>
+                        <li><a href="/cities.html#phoenix">Phoenix</a></li>
+                        <li><a href="/cities.html">All Cities</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/case-studies.html">Case Studies</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p><strong>Phone:</strong> <a href="tel:+16036058532">(603) 605-8532</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:alex@teamrankrise.com">alex@teamrankrise.com</a></p>
+                        <p style="margin-top: 1rem;">Available for consultation Monday&ndash;Friday, 9 AM&ndash;5 PM EST</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 RankRise SEO. All rights reserved. Local SEO strategies that drive results.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

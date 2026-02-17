@@ -1107,6 +1107,21 @@ p:last-child { margin-bottom: 0; }
     margin-top: 2rem;
 }
 
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+.footer-social a {
+    color: var(--text-muted);
+    transition: color 0.3s var(--ease);
+}
+
+.footer-social a:hover {
+    color: var(--emerald);
+}
+
 .footer-bottom {
     border-top: 1px solid var(--border);
     padding-top: 2rem;
