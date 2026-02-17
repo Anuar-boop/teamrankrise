@@ -21,6 +21,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <noscript><style>.reveal{opacity:1;transform:none;}</style></noscript>
     <style>
         .audit-hero {
             min-height: 60vh;
@@ -293,6 +294,7 @@
             </svg>
             RankRise
         </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         <ul class="nav-menu" id="navMenu">
             <li><a href="/">Home</a></li>
             <li><a href="/services.html">Services</a></li>
@@ -317,6 +319,33 @@
                 <button id="analyzeBtn">Analyze My Site</button>
             </div>
             <p class="audit-note">100% free. No signup required. Results in ~20-30 seconds.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding: 40px 0 60px; border-top: 1px solid var(--border);">
+    <div class="container" style="text-align: center;">
+        <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem;">Trusted by NH businesses &middot; Built with professional SEO tools</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; align-items: center; opacity: 0.4;">
+            <span style="font-weight: 700; font-size: 1rem; color: var(--text-secondary);">Google Search Console</span>
+            <span style="font-weight: 700; font-size: 1rem; color: var(--text-secondary);">Ahrefs</span>
+            <span style="font-weight: 700; font-size: 1rem; color: var(--text-secondary);">SEMrush</span>
+            <span style="font-weight: 700; font-size: 1rem; color: var(--text-secondary);">Screaming Frog</span>
+            <span style="font-weight: 700; font-size: 1rem; color: var(--text-secondary);">Moz</span>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap;">
+            <div style="text-align: center;">
+                <div style="font-size: 1.75rem; font-weight: 900; color: var(--emerald);">312%</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Avg. traffic increase</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-size: 1.75rem; font-weight: 900; color: var(--emerald);">30</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Day free trial</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-size: 1.75rem; font-weight: 900; color: var(--emerald);">0</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Contracts required</div>
+            </div>
         </div>
     </div>
 </section>
@@ -815,6 +844,7 @@
         // Small delay so the page renders first
         setTimeout(runAudit, 500);
     }
+    // Fallback noscript handling
     document.getElementById('fallbackBtn').addEventListener('click', function() {
         var email = document.getElementById('fallbackEmail').value.trim();
         if (!email || email.indexOf('@') === -1) { document.getElementById('fallbackEmail').focus(); return; }
@@ -830,6 +860,9 @@
     });
 })();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
