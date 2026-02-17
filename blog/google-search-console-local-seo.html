@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Google Search Console for Local SEO — RankRise SEO</title>
+    <meta name="description" content="Google Search Console is free and powerful. Learn how to use it to track local rankings, find keyword opportunities, and fix SEO issues for your NH business.">
+    <link rel="canonical" href="https://teamrankrise.com/blog/google-search-console-local-seo.html">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:title" content="How to Use Google Search Console for Local SEO">
+    <meta property="og:description" content="Free, powerful SEO data for your NH business. Learn to use Google Search Console for local rankings.">
+    <meta property="og:url" content="https://teamrankrise.com/blog/google-search-console-local-seo.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://teamrankrise.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How to Use Google Search Console for Local SEO">
+    <meta name="twitter:description" content="Free SEO data for local businesses. Track rankings, find opportunities, fix issues.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <noscript><style>.reveal{opacity:1;transform:none;}</style></noscript>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Use Google Search Console for Local SEO",
+        "description": "Learn how to use Google Search Console to track local rankings, find keyword opportunities, and fix SEO issues.",
+        "author": {"@type": "Person", "name": "Alex"},
+        "publisher": {"@type": "Organization", "name": "RankRise SEO", "url": "https://teamrankrise.com"},
+        "datePublished": "2026-02-17",
+        "dateModified": "2026-02-17",
+        "mainEntityOfPage": "https://teamrankrise.com/blog/google-search-console-local-seo.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://teamrankrise.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://teamrankrise.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Google Search Console for Local SEO", "item": "https://teamrankrise.com/blog/google-search-console-local-seo.html"}
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<svg class="noise-overlay" width="100%" height="100%">
+    <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+    <rect width="100%" height="100%" filter="url(#noise)"/>
+</svg>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18L8 6h1.5L13 14l3-10h1.5" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            RankRise
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/case-studies.html">Results</a></li>
+            <li><a href="/blog/" class="active">Blog</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li class="nav-cta"><a href="tel:+16036058532" class="btn-nav">Call (603) 605-8532</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="page-header">
+    <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> <span>Google Search Console</span></div>
+        <span class="tag">SEO Tools</span>
+        <h1>How to Use Google Search Console for Local SEO</h1>
+        <div class="blog-card-meta">
+            <span>Alex</span>
+            <span>Feb 17, 2026</span>
+            <span>11 min read</span>
+        </div>
+    </div>
+</section>
+
+<article class="section blog-content">
+    <div class="container" style="max-width:720px">
+
+        <div class="reveal">
+            <p>Google Search Console (GSC) is the most underused free tool in local SEO. It gives you <strong>data directly from Google</strong> about how your site appears in search results — what queries trigger your pages, your click-through rates, indexing issues, and technical problems.</p>
+            <p>If <a href="/blog/google-analytics-local-business.html">Google Analytics</a> tells you what happens on your site, Search Console tells you what happens <strong>before people get to your site</strong>. For NH businesses trying to improve their <a href="/blog/local-seo-guide-nh.html">local SEO</a>, this data is gold.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Setting Up Google Search Console</h2>
+            <p>If you haven't set it up yet, here's the quick version:</p>
+            <ol>
+                <li>Go to <strong>search.google.com/search-console</strong> and sign in with your Google account</li>
+                <li>Click "Add property" and enter your website URL</li>
+                <li>Choose a verification method:
+                    <ul>
+                        <li><strong>DNS record</strong> (recommended) — add a TXT record to your domain registrar</li>
+                        <li><strong>HTML file</strong> — upload a verification file to your website</li>
+                        <li><strong>HTML tag</strong> — add a meta tag to your homepage</li>
+                        <li><strong>Google Analytics</strong> — auto-verify if GA is already installed</li>
+                    </ul>
+                </li>
+                <li>Submit your <strong>sitemap</strong> (yourdomain.com/sitemap.xml) under "Sitemaps"</li>
+                <li>Wait 2-3 days for data to start appearing</li>
+            </ol>
+            <p><strong>Pro tip:</strong> Add both <code>https://yourdomain.com</code> and <code>https://www.yourdomain.com</code> as properties, then set the preferred version.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>The 5 Reports That Matter for Local SEO</h2>
+
+            <h3>1. Performance Report — Your Ranking Dashboard</h3>
+            <p>This is where you'll spend most of your time. The Performance report shows:</p>
+            <ul>
+                <li><strong>Queries:</strong> What people searched to find your site</li>
+                <li><strong>Pages:</strong> Which pages appear in search results</li>
+                <li><strong>Clicks:</strong> How many people clicked through to your site</li>
+                <li><strong>Impressions:</strong> How many times your site appeared in results</li>
+                <li><strong>CTR (Click-Through Rate):</strong> Clicks ÷ Impressions — how compelling your listing looks</li>
+                <li><strong>Position:</strong> Your average ranking for each query</li>
+            </ul>
+
+            <h4>How to Use It for Local SEO</h4>
+            <p><strong>Filter by query containing your city name.</strong> Click "New" → "Query" → contains "manchester" (or whatever city). This shows only local searches. Look for:</p>
+            <ul>
+                <li><strong>High impressions, low clicks</strong> — your title/description needs work. Rewrite it to be more compelling</li>
+                <li><strong>Position 4-10</strong> — these are "striking distance" keywords. A little optimization could push them to top 3</li>
+                <li><strong>Queries you didn't expect</strong> — people might be finding you for services you haven't optimized for. Create content targeting those</li>
+            </ul>
+        </div>
+
+        <div class="reveal">
+            <h3>2. Coverage/Indexing Report — Is Google Seeing Your Pages?</h3>
+            <p>This report shows which pages Google has indexed (can show in search) and which have problems.</p>
+            <p>Key things to check:</p>
+            <ul>
+                <li><strong>"Not indexed" pages</strong> — if important pages aren't indexed, they can't rank. Common causes: noindex tag, thin content, crawl errors</li>
+                <li><strong>"Excluded" pages</strong> — pages Google chose not to index. Check if any are pages you WANT indexed</li>
+                <li><strong>"Error" pages</strong> — server errors, redirect issues, or blocked pages that need fixing</li>
+            </ul>
+            <p>For a local business, make sure these pages are indexed:</p>
+            <ul>
+                <li>Homepage</li>
+                <li>All service pages</li>
+                <li>City/location pages</li>
+                <li>Contact page</li>
+                <li>All blog posts</li>
+            </ul>
+        </div>
+
+        <div class="reveal">
+            <h3>3. Mobile Usability — Are Phone Users Happy?</h3>
+            <p>Since most local searches happen on mobile, this report is critical. It flags issues like:</p>
+            <ul>
+                <li>Text too small to read</li>
+                <li>Clickable elements too close together</li>
+                <li>Content wider than screen</li>
+                <li>Viewport not configured</li>
+            </ul>
+            <p>Fix every issue listed here. <a href="/blog/mobile-friendly-website-nh.html">Mobile-friendliness</a> is a ranking factor, and for local businesses, it's even more important since customers are often searching on the go.</p>
+        </div>
+
+        <div class="reveal">
+            <h3>4. Core Web Vitals — Speed and User Experience</h3>
+            <p>Google measures three metrics that affect rankings:</p>
+            <table style="width:100%;border-collapse:collapse;margin:1.5rem 0">
+                <thead>
+                    <tr style="border-bottom:2px solid rgba(255,255,255,0.1)">
+                        <th style="text-align:left;padding:0.75rem;color:var(--text-secondary)">Metric</th>
+                        <th style="text-align:left;padding:0.75rem;color:var(--text-secondary)">What It Measures</th>
+                        <th style="text-align:left;padding:0.75rem;color:var(--text-secondary)">Good Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
+                        <td style="padding:0.75rem"><strong>LCP</strong> (Largest Contentful Paint)</td>
+                        <td style="padding:0.75rem">How fast the main content loads</td>
+                        <td style="padding:0.75rem;color:#10b981">Under 2.5 seconds</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
+                        <td style="padding:0.75rem"><strong>INP</strong> (Interaction to Next Paint)</td>
+                        <td style="padding:0.75rem">How fast the page responds to clicks</td>
+                        <td style="padding:0.75rem;color:#10b981">Under 200ms</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0.75rem"><strong>CLS</strong> (Cumulative Layout Shift)</td>
+                        <td style="padding:0.75rem">How much the layout jumps around</td>
+                        <td style="padding:0.75rem;color:#10b981">Under 0.1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>If any URLs show "poor" status, prioritize fixing them. See our <a href="/blog/website-speed-optimization.html">speed optimization guide</a> for specific fixes.</p>
+        </div>
+
+        <div class="reveal">
+            <h3>5. Links Report — Who Links to You?</h3>
+            <p>The Links report shows:</p>
+            <ul>
+                <li><strong>External links:</strong> Other websites linking to yours (the most valuable SEO signal)</li>
+                <li><strong>Top linking sites:</strong> Which domains link to you most</li>
+                <li><strong>Top linked pages:</strong> Which of your pages get the most links</li>
+                <li><strong>Internal links:</strong> How your own pages link to each other</li>
+            </ul>
+            <p>For local businesses, look for links from:</p>
+            <ul>
+                <li>Local directories and chambers of commerce</li>
+                <li>NH news sites and blogs</li>
+                <li>Industry directories</li>
+                <li>Partner/supplier websites</li>
+            </ul>
+            <p>If you're not getting local backlinks, check our <a href="/blog/get-local-backlinks-nh.html">guide to getting local backlinks in NH</a>.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>5 Local SEO Actions You Can Take Today with GSC</h2>
+
+            <h3>Action 1: Find Your "Striking Distance" Keywords</h3>
+            <ol>
+                <li>Go to Performance → Queries</li>
+                <li>Filter: Position between 4 and 20</li>
+                <li>Sort by impressions (highest first)</li>
+                <li>These are keywords where you're close to page 1 but not in the top 3</li>
+            </ol>
+            <p><strong>Fix:</strong> Find the page ranking for each keyword. Improve the content — add more detail, better headings, <a href="/blog/internal-linking-seo.html">internal links</a>, and make sure the keyword appears in the title and H1.</p>
+
+            <h3>Action 2: Improve Low-CTR Pages</h3>
+            <ol>
+                <li>Go to Performance → Pages</li>
+                <li>Sort by impressions (highest first)</li>
+                <li>Look for pages with high impressions but low CTR (under 3%)</li>
+            </ol>
+            <p><strong>Fix:</strong> Rewrite the page's title tag and meta description. Make them compelling — use numbers, power words, and a clear benefit. Your title is your ad copy in search results.</p>
+
+            <h3>Action 3: Discover New Content Ideas</h3>
+            <ol>
+                <li>Go to Performance → Queries</li>
+                <li>Sort by impressions</li>
+                <li>Look for queries that don't match any page on your site</li>
+            </ol>
+            <p><strong>Fix:</strong> Create new content targeting those queries. If people are searching for "emergency plumber nashua nh" and you don't have a page about emergency services, that's a content gap. Use our <a href="/blog/keyword-research-local-seo.html">keyword research guide</a> to expand these into content clusters.</p>
+
+            <h3>Action 4: Fix Indexing Problems</h3>
+            <ol>
+                <li>Go to Pages (Indexing) report</li>
+                <li>Check "Not indexed" for any important pages</li>
+                <li>Click through to see the specific reason</li>
+            </ol>
+            <p><strong>Fix:</strong> Common solutions include removing accidental noindex tags, adding more content to thin pages, fixing server errors, and submitting URLs for re-indexing.</p>
+
+            <h3>Action 5: Monitor Your Sitemap</h3>
+            <ol>
+                <li>Go to Sitemaps</li>
+                <li>Verify your sitemap is submitted and showing "Success"</li>
+                <li>Check "Discovered URLs" — this should match (roughly) the number of pages you have</li>
+            </ol>
+            <p><strong>Fix:</strong> If your sitemap shows errors, check the XML for formatting issues. Make sure every URL in the sitemap returns a 200 status code.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Monthly GSC Routine for Local Businesses</h2>
+            <p>Set a calendar reminder. Here's your 30-minute monthly check-in:</p>
+            <table style="width:100%;border-collapse:collapse;margin:1.5rem 0">
+                <thead>
+                    <tr style="border-bottom:2px solid rgba(255,255,255,0.1)">
+                        <th style="text-align:left;padding:0.75rem;color:var(--text-secondary)">Time</th>
+                        <th style="text-align:left;padding:0.75rem;color:var(--text-secondary)">Task</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
+                        <td style="padding:0.75rem">5 min</td>
+                        <td style="padding:0.75rem">Check Performance overview — are clicks and impressions trending up?</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
+                        <td style="padding:0.75rem">5 min</td>
+                        <td style="padding:0.75rem">Review new queries — any surprising keywords you should target?</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
+                        <td style="padding:0.75rem">5 min</td>
+                        <td style="padding:0.75rem">Check for indexing errors — any new pages not getting indexed?</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
+                        <td style="padding:0.75rem">5 min</td>
+                        <td style="padding:0.75rem">Review Core Web Vitals — any pages showing "poor" status?</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.06)">
+                        <td style="padding:0.75rem">5 min</td>
+                        <td style="padding:0.75rem">Check mobile usability — any new issues flagged?</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0.75rem">5 min</td>
+                        <td style="padding:0.75rem">Review new backlinks — anyone linking to you? Thank them or build the relationship</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="reveal">
+            <h2>GSC + Google Analytics: Using Them Together</h2>
+            <p>Search Console and <a href="/blog/google-analytics-local-business.html">Analytics</a> complement each other:</p>
+            <ul>
+                <li><strong>GSC:</strong> What queries bring people to your site (pre-click data)</li>
+                <li><strong>GA:</strong> What people do once they arrive (post-click data)</li>
+            </ul>
+            <p>Connect them in GA4 under Admin → Product Links → Search Console Links. This lets you see the full picture: which search queries lead to which pages and which pages convert.</p>
+            <p>For <a href="/blog/track-seo-results.html">tracking SEO results</a>, use both tools together. GSC shows if your rankings are improving; GA shows if those improvements are generating leads and revenue.</p>
+        </div>
+
+        <div class="reveal">
+            <h2>Common Mistakes to Avoid</h2>
+            <ul>
+                <li><strong>Checking daily:</strong> GSC data has a 2-3 day delay. Weekly or monthly reviews are more productive</li>
+                <li><strong>Obsessing over position changes:</strong> Rankings fluctuate daily. Look at monthly trends, not daily shifts</li>
+                <li><strong>Ignoring the "Pages" tab:</strong> Most people only look at queries. The Pages tab shows which content is actually performing</li>
+                <li><strong>Not filtering by date range:</strong> Always compare to the previous period to spot trends</li>
+                <li><strong>Forgetting to submit new pages:</strong> After publishing new content, use "URL Inspection" and click "Request Indexing" to speed up discovery</li>
+            </ul>
+        </div>
+
+        <div class="reveal" style="margin-top:3rem;padding:2rem;background:rgba(16,185,129,0.05);border:1px solid rgba(16,185,129,0.15);border-radius:12px;">
+            <h2 style="margin-top:0">Want Us to Handle Your SEO Reporting?</h2>
+            <p>Our <a href="/services.html#local-seo">local SEO packages</a> include monthly Search Console reporting with actionable insights — not just data dumps. We translate GSC data into clear actions that grow your rankings and revenue.</p>
+            <a href="/free-audit.html" class="btn" style="margin-top:1rem;display:inline-block;">Get a Free SEO Audit →</a>
+        </div>
+
+        <div class="reveal" style="margin-top:3rem">
+            <h2>Related Guides</h2>
+            <ul>
+                <li><a href="/blog/google-analytics-local-business.html">Google Analytics for Local Businesses: 5 Reports That Matter</a></li>
+                <li><a href="/blog/track-seo-results.html">How to Track Your SEO Results (Without Being an Expert)</a></li>
+                <li><a href="/blog/keyword-research-local-seo.html">Keyword Research for Local SEO: A Step-by-Step Guide</a></li>
+                <li><a href="/blog/website-speed-optimization.html">Website Speed Optimization: A Complete Guide</a></li>
+                <li><a href="/blog/internal-linking-seo.html">Internal Linking for SEO: How to Structure Your Site</a></li>
+                <li><a href="/blog/seo-friendly-content-writing.html">SEO-Friendly Content Writing: A Guide for Local Businesses</a></li>
+                <li><a href="/blog/nh-seo-checklist-2026.html">NH SEO Checklist for 2026</a></li>
+                <li><a href="/blog/competitor-seo-analysis.html">How to Analyze Your Competitors' SEO</a></li>
+            </ul>
+        </div>
+
+    </div>
+</article>
+
+<section class="section cta-section">
+    <div class="container" style="text-align:center;max-width:640px">
+        <h2 class="reveal">Stop Losing Customers to Competitors</h2>
+        <p class="reveal">Get a free SEO audit showing exactly what's holding your rankings back — and a clear plan to fix it.</p>
+        <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
+            <a href="/free-audit.html" class="btn">Get Your Free Audit →</a>
+            <a href="/contact.html" class="btn btn-outline">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 18L8 6h1.5L13 14l3-10h1.5" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    RankRise SEO
+                </a>
+                <p>New Hampshire's local search specialists. We help small businesses rank higher, get more calls, and grow revenue.</p>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services.html#local-seo">Local SEO</a></li>
+                    <li><a href="/services.html#gbp">Google Business Profile</a></li>
+                    <li><a href="/services.html#on-page">On-Page SEO</a></li>
+                    <li><a href="/services.html#technical">Technical SEO</a></li>
+                    <li><a href="/services.html#audit">SEO Audits</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/case-studies.html">Case Studies</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 RankRise SEO. All rights reserved. | New Hampshire, USA</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
