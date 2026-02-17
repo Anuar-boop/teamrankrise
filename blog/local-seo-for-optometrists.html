@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local SEO for Optometrists and Eye Care | RankRise SEO</title>
+    <meta name="description" content="Complete local SEO strategy for optometry practices and eye care clinics. Attract new patients with GBP optimization, reviews, citations, and targeted content.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #08090a;
+            color: #e8eaed;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* SVG Noise Texture Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' result='noise' /%3E%3C/filter%3E%3Crect width='400' height='400' fill='%23e8eaed' opacity='0.02' filter='url(%23noise)' /%3E%3C/svg%3E");
+            background-size: 400px 400px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(8, 9, 10, 0.95);
+            border-bottom: 1px solid #10b981;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #10b981;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #e8eaed;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #10b981;
+        }
+
+        .cta-btn {
+            background: #10b981;
+            color: #08090a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        /* Blog Header */
+        .blog-header {
+            padding: 4rem 0 2rem;
+            border-bottom: 1px solid #10b981;
+            margin-bottom: 2rem;
+        }
+
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #10b981;
+            line-height: 1.2;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: #a0a9b8;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Article Content */
+        article {
+            margin-bottom: 3rem;
+        }
+
+        article h2 {
+            font-size: 1.8rem;
+            color: #10b981;
+            margin: 2rem 0 1rem;
+            padding-top: 1rem;
+        }
+
+        article h3 {
+            font-size: 1.3rem;
+            color: #e8eaed;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        article p {
+            margin-bottom: 1rem;
+            color: #d0d5dd;
+        }
+
+        article ul,
+        article ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        article li {
+            margin-bottom: 0.5rem;
+            color: #d0d5dd;
+        }
+
+        .highlight {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight strong {
+            color: #10b981;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f1117;
+            border-top: 1px solid #10b981;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #10b981;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #a0a9b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #10b981;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #30363d;
+            padding-top: 2rem;
+            text-align: center;
+            color: #6e7681;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info p {
+            color: #a0a9b8;
+            margin: 0.5rem 0;
+        }
+
+        .contact-info a {
+            color: #10b981;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+
+            article h2 {
+                font-size: 1.4rem;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Local SEO for Optometrists and Eye Care Clinics: 2026 Guide",
+        "description": "Strategic local SEO guide for optometry practices. Learn GBP optimization, attract new patients, build trust with reviews, and dominate eye care search rankings.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://teamrankrise.com/og-optometrist-seo.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-02-17",
+        "dateModified": "2026-02-17",
+        "author": {
+            "@type": "Person",
+            "name": "Alex",
+            "url": "https://teamrankrise.com/about.html"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "RankRise SEO",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://teamrankrise.com/logo.svg",
+                "width": 250,
+                "height": 60
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://teamrankrise.com/blog/local-seo-for-optometrists.html"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">RankRise</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/contact.html" class="cta-btn">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Blog Header -->
+        <div class="blog-header">
+            <h1>Local SEO for Optometrists and Eye Care Clinics: 2026 Guide</h1>
+            <div class="blog-meta">
+                <span>By Alex</span>
+                <span>February 17, 2026</span>
+                <span>~12 min read</span>
+            </div>
+            <span class="tag">Industry Guide</span>
+        </div>
+
+        <!-- Article Content -->
+        <article>
+            <h2>Why Local SEO Is Critical for Optometry Practices</h2>
+            <p>Unlike specialty medical practices that rely on referrals, optometry is driven by patient search behavior. When someone needs an eye exam, glasses, or contact lenses, they search "optometrist near me" or "eye doctor [city]." If your practice doesn't appear in the top 3 local results, patients go to your competitors.</p>
+            <p>Studies show that 72% of patients choose an eye doctor based on local search results and reviews. Your Google Business Profile and local SEO directly impact new patient acquisition. A practice ranking #1 locally will see 3-4x more patient inquiries than one ranking #5-6. For optometry, local SEO isn't optional—it's the foundation of patient growth.</p>
+
+            <h2>The Modern Eye Care Patient Journey</h2>
+            <p>Understanding how patients search for eye care is essential to your SEO strategy.</p>
+            <ul>
+                <li><strong>Search-first behavior:</strong> 68% of new eye care patients search online before calling</li>
+                <li><strong>Reviews matter enormously:</strong> Eye care has high trust requirements. Patients read 5-7 reviews before booking</li>
+                <li><strong>Specific searches:</strong> Patients search for specific services: "pediatric optometrist," "contact lens fitting," "dry eye specialist," "glasses same-day"</li>
+                <li><strong>Insurance questions:</strong> Patients search "optometrist [insurance] [city]" or "does my insurance cover eye exams"</li>
+                <li><strong>Urgency variations:</strong> Some searches are urgent ("eye exam today"), others are informational ("what to expect at eye doctor")</li>
+            </ul>
+
+            <h2>Keyword Strategy for Eye Care Practices</h2>
+            <p>Your keyword strategy should capture three intent categories: service-specific, condition-specific, and informational.</p>
+
+            <h3>High-Intent Service Keywords</h3>
+            <ul>
+                <li>Optometrist [city]</li>
+                <li>Eye doctor [city]</li>
+                <li>Eye exam [city]</li>
+                <li>Contact lens fitting [city]</li>
+                <li>Glasses fitting [city]</li>
+                <li>Vision testing [city]</li>
+                <li>Eye care [city]</li>
+                <li>Pediatric optometrist [city]</li>
+            </ul>
+
+            <h3>Condition-Specific Keywords (Very High Intent)</h3>
+            <ul>
+                <li>Dry eye treatment [city]</li>
+                <li>Astigmatism correction [city]</li>
+                <li>Presbyopia treatment [city]</li>
+                <li>Red eye treatment [city]</li>
+                <li>Eye floaters treatment [city]</li>
+            </ul>
+
+            <h3>Informational Keywords (Educational Intent)</h3>
+            <ul>
+                <li>How often should I get an eye exam?</li>
+                <li>What to expect at optometry appointment</li>
+                <li>Difference between contacts and glasses</li>
+                <li>How to choose eyeglasses frames</li>
+                <li>Signs you need glasses</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Pro Tip:</strong> Condition-specific keywords like "dry eye treatment [city]" have 10-20x higher conversion rates than generic "optometrist" searches. Target these aggressively. A patient searching "dry eye treatment Denver" is ready to book an appointment immediately. A patient searching "optometrist Denver" is still researching.
+            </div>
+
+            <h2>Google Business Profile Optimization for Eye Care</h2>
+            <p>Your GBP is your most visible marketing asset. Optimization here directly drives new patient appointments.</p>
+
+            <h3>Complete GBP Setup</h3>
+            <ul>
+                <li><strong>Practice name:</strong> Include specialty if relevant ("Sarah Chen Optometry," "Vision Care Plus Family Optometrist")</li>
+                <li><strong>Category:</strong> Select "Optometrist" as primary, add "Eye Care Center" or "Optical Store" if applicable</li>
+                <li><strong>Phone:</strong> Use dedicated business number. Answer locally during hours</li>
+                <li><strong>Hours:</strong> Update daily. List evening/weekend hours prominently if you offer them</li>
+                <li><strong>Address and service area:</strong> Clearly state location and whether you serve surrounding areas</li>
+                <li><strong>Website:</strong> Link to your appointment booking page</li>
+                <li><strong>Attributes:</strong> Add relevant: "Same-day glasses," "Insurance accepted," "Pediatric care," "Dry eye specialist," "Contact lenses available"</li>
+                <li><strong>Photos:</strong> 8-12 professional photos of reception area, exam room (with patient consent), eyewear selection, team photos. Patients want to know what to expect</li>
+                <li><strong>Services list:</strong> Detail each service with pricing if possible: "Eye exams $89-149," "Contact lens fitting $75"</li>
+            </ul>
+
+            <h3>GBP Posting Strategy for Optometry</h3>
+            <p>Post 1-2 times weekly about:</p>
+            <ul>
+                <li>Eye health tips ("5 signs you need glasses," "How to reduce eye strain from screens")</li>
+                <li>Seasonal content ("Protect your eyes in summer sun," "Winter dry eye management")</li>
+                <li>New equipment or services ("We now offer advanced OCT imaging")</li>
+                <li>Team introductions ("Meet Dr. Martinez, our new pediatric optometrist")</li>
+                <li>Special offers ("First-time patient exam $59, regular $99")</li>
+                <li>Insurance announcements ("Now accepting United Healthcare and Aetna")</li>
+            </ul>
+
+            <h2>Building a Strong Review Strategy</h2>
+            <p>For healthcare practices, reviews are trust-building and conversion-critical. Patients trust 5-star ratings over advertising.</p>
+
+            <h3>Review Generation System</h3>
+            <ul>
+                <li><strong>At appointment end:</strong> Hand patients a card with QR code to leave review. Make it frictionless</li>
+                <li><strong>Email follow-up:</strong> Send email 2-3 days after appointment with review link and thank you message</li>
+                <li><strong>SMS requests:</strong> If you have patient phone numbers, send SMS asking for review (with opt-in compliance)</li>
+                <li><strong>Special incentive:</strong> Offer $10 off glasses purchase for leaving a 5-star review (compliant with platform policies)</li>
+                <li><strong>Systematic requests:</strong> Make review requests part of your appointment follow-up checklist</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Critical for Healthcare:</strong> HIPAA and review platform guidelines prohibit: asking patients to remove negative reviews, paying for positive reviews, writing fake reviews, or incentivizing reviews without disclosure. Stick to ethical practices. A practice with 50 authentic 4.2-star reviews ranks better than one with 10 fake 5-star reviews (Google detects manipulation).
+            </div>
+
+            <h3>Handling Negative Patient Reviews</h3>
+            <ol>
+                <li>Respond within 24 hours. Keep response professional and empathetic</li>
+                <li>Don't get defensive. Acknowledge the patient's concern</li>
+                <li>Offer to resolve the issue (free re-exam, second opinion consultation)</li>
+                <li>Suggest moving conversation offline: "Please call us at [phone] to discuss"</li>
+                <li>Document resolution and ask patient to update their review</li>
+            </ol>
+
+            <h2>Local Citations and NAP Consistency for Optometrists</h2>
+            <p>Citations—mentions of your Name, Address, Phone—are ranking signals for local healthcare search.</p>
+
+            <h3>Healthcare-Specific Citation Sources</h3>
+            <ul>
+                <li><strong>Google Business Profile</strong> (most important)</li>
+                <li><strong>Healthgrades</strong> (major healthcare directory, impacts insurance recommendations)</li>
+                <li><strong>Zocdoc</strong> (patient appointment booking platform)</li>
+                <li><strong>Yelp</strong> (still critical for local search and trust)</li>
+                <li><strong>Vitals</strong> (healthcare provider directory)</li>
+                <li><strong>Bergman and Associates Directory</strong> (optometry-specific)</li>
+                <li><strong>American Optometric Association (AOA)</strong> directory</li>
+                <li><strong>Insurance provider directories</strong> (UnitedHealth, Aetna, BlueCross—crucial for patient discovery)</li>
+                <li><strong>Local chamber of commerce websites</strong></li>
+            </ul>
+
+            <h3>NAP Consistency Protocol</h3>
+            <ul>
+                <li>Use identical business name (no variations)</li>
+                <li>Identical phone number (consistent formatting)</li>
+                <li>Identical address (including suite number)</li>
+                <li>Immediately update all 10+ citations if you change location or phone</li>
+            </ul>
+
+            <h2>Content Marketing for Eye Care Practices</h2>
+            <p>Content establishes authority, educates patients, and captures long-tail keywords.</p>
+
+            <h3>Content Topics to Publish</h3>
+            <ul>
+                <li><strong>Condition guides:</strong> "Dry eye syndrome: Causes, symptoms, and treatment options" (builds trust, educates incoming patients)</li>
+                <li><strong>Service guides:</strong> "What to expect during your eye exam" (reduces anxiety, increases conversions)</li>
+                <li><strong>Product comparisons:</strong> "Contact lenses vs. glasses: Pros and cons comparison"</li>
+                <li><strong>Eye health tips:</strong> "5 ways to reduce eye strain from screen time," "How to protect your eyes in summer"</li>
+                <li><strong>Specialty pages:</strong> "Pediatric eye care," "Diabetic eye exams," "Contact lens fitting for first-timers"</li>
+                <li><strong>FAQs:</strong> "Do I need insurance to get an eye exam?" "How much does vision correction cost?"</li>
+                <li><strong>Team bios:</strong> Detailed bios of optometrists and staff (trust-building, captures branded searches)</li>
+            </ul>
+
+            <h3>Publishing Cadence</h3>
+            <p>Publish 2-3 times monthly. Consistency matters. A practice that publishes 24 posts yearly will rank higher than one publishing 100 thin posts.</p>
+
+            <h2>Technical SEO for Healthcare</h2>
+            <p>Healthcare websites have specific technical requirements to comply with patient privacy and search engine guidelines.</p>
+
+            <h3>Core Technical Elements</h3>
+            <ul>
+                <li><strong>Mobile responsiveness:</strong> 60% of eye care searches happen on mobile. Site must be mobile-perfect</li>
+                <li><strong>Page speed:</strong> Use PageSpeed Insights. Target 75+ score. Healthcare sites that load slowly lose patients</li>
+                <li><strong>HIPAA compliance:</strong> Use HTTPS, secure contact forms, no unencrypted patient data in URLs</li>
+                <li><strong>Local schema markup:</strong> LocalBusiness schema with practice name, address, phone, hours, specialties</li>
+                <li><strong>MedicalBusiness schema:</strong> Specify that you're a medical practice</li>
+                <li><strong>Doctor schema:</strong> Mark up individual optometrists with their credentials and specialties</li>
+                <li><strong>Appointment schema:</strong> If you offer online booking, use AppointmentBooking schema</li>
+                <li><strong>Google Search Console:</strong> Claim site, submit sitemap, monitor search performance</li>
+            </ul>
+
+            <h2>Common SEO Mistakes Eye Care Practices Make</h2>
+
+            <h3>Mistake #1: Outdated or Incomplete GBP</h3>
+            <p>Many practices set up their GBP and forget about it. Hours change, services expand, staff changes. An outdated GBP signals to patients you're not active. Update your GBP weekly.</p>
+
+            <h3>Mistake #2: Ignoring Patient Reviews</h3>
+            <p>Practices that don't actively request reviews stay at 3-4 stars while competitors climb to 4.7-4.9 stars. New patient conversion drops 40-50% for practices with low ratings. Build reviews systematically.</p>
+
+            <h3>Mistake #3: No Specialty Content</h3>
+            <p>Ranking for "optometrist [city]" is fine, but specific condition content ("dry eye treatment," "contact lens fitting for keratoconus") converts at 5-10x higher rates. Create specialty pages.</p>
+
+            <h3>Mistake #4: Inconsistent NAP Data</h3>
+            <p>If your address is different on your website, GBP, Healthgrades, and Yelp, Google treats these as different practices and splits your ranking signals.</p>
+
+            <h3>Mistake #5: Missing Online Appointment Booking</h3>
+            <p>Patients want to book appointments without calling. A missing online booking form means losing 20-30% of interested patients who don't want to make phone calls.</p>
+
+            <h2>Your 60-Day Eye Care SEO Action Plan</h2>
+
+            <h3>Week 1-2: GBP & Citations Audit</h3>
+            <ul>
+                <li>Claim and optimize your Google Business Profile completely (photos, hours, services, attributes)</li>
+                <li>Claim profiles on Healthgrades, Zocdoc, Yelp, and Vitals</li>
+                <li>Update all insurance provider directories (UnitedHealth, Aetna, BlueCross, etc.)</li>
+                <li>Check NAP consistency across all 10+ listings. Fix any discrepancies</li>
+            </ul>
+
+            <h3>Week 3-4: Review Building</h3>
+            <ul>
+                <li>Design and print physical review request cards for appointment checkout</li>
+                <li>Create email and SMS review request templates</li>
+                <li>Contact 20 recent patients requesting reviews</li>
+                <li>Set up automated review request follow-up (email 2 days after appointment)</li>
+            </ul>
+
+            <h3>Week 5-6: Content & Technical</h3>
+            <ul>
+                <li>Publish 2 blog posts (e.g., "Dry eye syndrome treatment options," "What to expect at your eye exam")</li>
+                <li>Audit site speed with PageSpeed Insights. Compress images, enable caching</li>
+                <li>Add LocalBusiness and MedicalBusiness schema to homepage</li>
+                <li>Create doctor schema for each optometrist (name, credentials, specialties)</li>
+            </ul>
+
+            <h3>Week 7-8: Expansion</h3>
+            <ul>
+                <li>Create specialty service pages (dry eye, pediatric eye care, contact lenses)</li>
+                <li>Post 4 GBP updates (eye health tips, staff introductions, insurance announcements)</li>
+                <li>Add online appointment booking form to website (if not already present)</li>
+                <li>Respond thoughtfully to all recent reviews (target 24-hour response time)</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Expected Results (90 Days):</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li>+15-25 new patient reviews (average 4.5+ stars)</li>
+                    <li>+25-35% increase in GBP impressions and clicks</li>
+                    <li>Top 3 ranking for "optometrist [city]" and 3-5 specialty keywords</li>
+                    <li>+30-40% increase in new patient inquiries from local search</li>
+                    <li>+20-30% increase in online appointment bookings</li>
+                </ul>
+            </div>
+
+            <h2>The Competitive Opportunity</h2>
+            <p>Most eye care practices treat SEO as an afterthought. They rely on referrals, word of mouth, and outdated marketing. This leaves enormous opportunity for practices willing to invest in SEO systems.</p>
+
+            <p>The practices winning right now are optimizing their GBP weekly, building authentic reviews, publishing educational content, and monitoring their rankings. These practices are seeing 30-50% increases in new patient acquisition year-over-year.</p>
+
+            <p>If you're ready to attract more new patients through local search and reduce your reliance on referrals and costly advertising, we can help. Our proven strategy has helped dozens of optometry practices go from invisible online to dominating their local market and increasing new patient bookings by 40-60% in 6 months.</p>
+
+            <p><strong>Book a consultation with our team today.</strong> We'll audit your online presence, benchmark you against competing practices in your area, and create a custom roadmap to become the #1 eye care practice in local search results.</p>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services.html#local-seo">Local SEO</a></li>
+                        <li><a href="/services.html#gbp">Google Business Profile</a></li>
+                        <li><a href="/services.html#on-page">On-Page SEO</a></li>
+                        <li><a href="/services.html#technical">Technical SEO</a></li>
+                        <li><a href="/services.html#audit">SEO Audit</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Top Cities</h4>
+                    <ul>
+                        <li><a href="/cities.html#new-york">New York</a></li>
+                        <li><a href="/cities.html#los-angeles">Los Angeles</a></li>
+                        <li><a href="/cities.html#houston">Houston</a></li>
+                        <li><a href="/cities.html#phoenix">Phoenix</a></li>
+                        <li><a href="/cities.html">All Cities</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/case-studies.html">Case Studies</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p><strong>Phone:</strong> <a href="tel:+16036058532">(603) 605-8532</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:alex@teamrankrise.com">alex@teamrankrise.com</a></p>
+                        <p style="margin-top: 1rem;">Available for consultation Monday–Friday, 9 AM–5 PM EST</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 RankRise SEO. All rights reserved. Local SEO strategies that drive results.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

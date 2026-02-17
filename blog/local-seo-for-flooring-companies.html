@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local SEO for Flooring Companies | RankRise SEO</title>
+    <meta name="description" content="Complete local SEO guide for flooring and carpet companies. Dominate Google search with GBP optimization, local citations, reviews, and targeted content strategies.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #08090a;
+            color: #e8eaed;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* SVG Noise Texture Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' result='noise' /%3E%3C/filter%3E%3Crect width='400' height='400' fill='%23e8eaed' opacity='0.02' filter='url(%23noise)' /%3E%3C/svg%3E");
+            background-size: 400px 400px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(8, 9, 10, 0.95);
+            border-bottom: 1px solid #10b981;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #10b981;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #e8eaed;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #10b981;
+        }
+
+        .cta-btn {
+            background: #10b981;
+            color: #08090a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        /* Blog Header */
+        .blog-header {
+            padding: 4rem 0 2rem;
+            border-bottom: 1px solid #10b981;
+            margin-bottom: 2rem;
+        }
+
+        .blog-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #10b981;
+            line-height: 1.2;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: #a0a9b8;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Article Content */
+        article {
+            margin-bottom: 3rem;
+        }
+
+        article h2 {
+            font-size: 1.8rem;
+            color: #10b981;
+            margin: 2rem 0 1rem;
+            padding-top: 1rem;
+        }
+
+        article h3 {
+            font-size: 1.3rem;
+            color: #e8eaed;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        article p {
+            margin-bottom: 1rem;
+            color: #d0d5dd;
+        }
+
+        article ul,
+        article ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        article li {
+            margin-bottom: 0.5rem;
+            color: #d0d5dd;
+        }
+
+        .highlight {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight strong {
+            color: #10b981;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f1117;
+            border-top: 1px solid #10b981;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #10b981;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #a0a9b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #10b981;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #30363d;
+            padding-top: 2rem;
+            text-align: center;
+            color: #6e7681;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+        }
+
+        .contact-info p {
+            color: #a0a9b8;
+            margin: 0.5rem 0;
+        }
+
+        .contact-info a {
+            color: #10b981;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+
+            article h2 {
+                font-size: 1.4rem;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Local SEO for Flooring and Carpet Companies: 2026 Strategy Guide",
+        "description": "Master local SEO for flooring companies. Learn GBP optimization, review strategies, local citations, content tactics, and common mistakes to avoid in 2026.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://teamrankrise.com/og-flooring-seo.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-02-17",
+        "dateModified": "2026-02-17",
+        "author": {
+            "@type": "Person",
+            "name": "Alex",
+            "url": "https://teamrankrise.com/about.html"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "RankRise SEO",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://teamrankrise.com/logo.svg",
+                "width": 250,
+                "height": 60
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://teamrankrise.com/blog/local-seo-for-flooring-companies.html"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">RankRise</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/contact.html" class="cta-btn">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Blog Header -->
+        <div class="blog-header">
+            <h1>Local SEO for Flooring and Carpet Companies: 2026 Strategy Guide</h1>
+            <div class="blog-meta">
+                <span>By Alex</span>
+                <span>February 17, 2026</span>
+                <span>~12 min read</span>
+            </div>
+            <span class="tag">Industry Guide</span>
+        </div>
+
+        <!-- Article Content -->
+        <article>
+            <h2>Why Flooring Companies Need Aggressive Local SEO</h2>
+            <p>Flooring installation and carpet services are hyperlocal businesses. Unlike appliance repair, flooring projects have longer sales cycles and higher consideration. Customers compare 3-5 companies before deciding. This means your Google visibility directly impacts your quote request volume.</p>
+            <p>68% of flooring and carpet customers start their research with "flooring near me" or location-specific searches. If you're not in the top 3 local results for these searches, competitors are capturing leads that should be yours. Local SEO isn't a nice-to-have—it's the foundation of growth for flooring businesses.</p>
+
+            <h2>Understanding the Flooring Market Dynamics</h2>
+            <p>The flooring industry is highly competitive. You're competing against national chains (like Lumber Liquidators and local big-box retailers), established local installers with strong reputations, and new businesses offering discount pricing.</p>
+            <ul>
+                <li><strong>High-value customers:</strong> A single flooring project is worth $3,000-$15,000+. Customer lifetime value is 2-3x higher than service industries</li>
+                <li><strong>Geographic specificity:</strong> Customers want installers in their city. A #1 ranking in Denver won't help you in Boulder</li>
+                <li><strong>Review dependency:</strong> Homeowners read 5-7 reviews before requesting quotes. Trust is paramount</li>
+                <li><strong>Long sales cycle:</strong> Customer journey is 2-6 weeks. You need content that educates at every stage: awareness, consideration, decision</li>
+                <li><strong>Visual content matters:</strong> Photos of your work are the most important marketing tool. Google heavily rewards visual content</li>
+            </ul>
+
+            <h2>Keyword Research for Flooring Services</h2>
+            <p>Your flooring keyword strategy should target three intent categories: material types, service types, and location modifiers.</p>
+
+            <h3>High-Intent Commercial Keywords</h3>
+            <ul>
+                <li>Hardwood flooring [city]</li>
+                <li>Laminate flooring [city]</li>
+                <li>Vinyl flooring [city]</li>
+                <li>Carpet installation [city]</li>
+                <li>Tile flooring [city]</li>
+                <li>Luxury vinyl plank [city]</li>
+            </ul>
+
+            <h3>Problem-Solving Keywords (Educational Intent)</h3>
+            <ul>
+                <li>Hardwood floor refinishing [city]</li>
+                <li>Carpet repair [city]</li>
+                <li>Water damaged flooring [city]</li>
+                <li>Floor removal [city]</li>
+                <li>Best flooring for kitchens</li>
+                <li>Hardwood vs laminate vs vinyl</li>
+            </ul>
+
+            <h3>Comparison and Cost Keywords</h3>
+            <ul>
+                <li>Hardwood flooring cost [city]</li>
+                <li>Carpet installation prices</li>
+                <li>Best value flooring options</li>
+                <li>Flooring contractors near me</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Pro Tip:</strong> Problem-solving keywords (like "water damaged flooring" or "squeaky hardwood floors") have lower search volume but MUCH higher intent. These people need a solution now. Rank for these and you'll convert 30-40% of visitors to quote requests.
+            </div>
+
+            <h2>Dominating Google Business Profile for Flooring</h2>
+            <p>Your GBP is your storefront in local search. For flooring companies, visual content is critical.</p>
+
+            <h3>Essential GBP Optimization</h3>
+            <ul>
+                <li><strong>Business name:</strong> Include material type if space allows ("ABC Hardwood Flooring & Carpet," not just "ABC Flooring")</li>
+                <li><strong>Category:</strong> Select "Flooring Contractor" or "Flooring Installation Service" plus relevant specialties</li>
+                <li><strong>Service area:</strong> Clearly define your service radius (e.g., 20-30 miles)</li>
+                <li><strong>Hours:</strong> Update daily. Show showroom hours and appointment availability</li>
+                <li><strong>Phone:</strong> Use a dedicated business number. Train team to answer locally</li>
+                <li><strong>Website:</strong> Link to your homepage or a landing page with case studies and gallery</li>
+                <li><strong>Attributes:</strong> Add all relevant: "Free estimates," "Licensed and insured," "Flooring samples," "Same-day appointments"</li>
+                <li><strong>Photos and videos:</strong> 15-20 HIGH-QUALITY photos of finished projects. Videos of installation process or before/after transformations. These are your best marketing asset</li>
+                <li><strong>Services list:</strong> Detail every material type and service you offer with pricing</li>
+            </ul>
+
+            <h3>GBP Content Strategy for Flooring</h3>
+            <p>Post 2-3 times weekly with:</p>
+            <ul>
+                <li>Before/after project photos (highest engagement for flooring)</li>
+                <li>Material guides ("Pros and cons of luxury vinyl plank flooring")</li>
+                <li>Seasonal tips ("Best flooring for high-humidity kitchens")</li>
+                <li>Customer testimonials with project photos</li>
+                <li>Special offers ("Free underlay with hardwood installation this month")</li>
+                <li>Behind-the-scenes installation videos (15-30 seconds)</li>
+            </ul>
+
+            <h2>Review Strategy for Higher Conversion Rates</h2>
+            <p>For flooring companies, reviews are conversion gold. A 4.8-star rating will increase quote request conversion by 40-50% compared to a 3.5-star rating.</p>
+
+            <h3>Review Generation System</h3>
+            <ul>
+                <li><strong>Post-installation card:</strong> Hand a branded card at job completion with QR code linking to review form</li>
+                <li><strong>Email follow-up:</strong> 1 week after installation, send email with project photos and review link</li>
+                <li><strong>Photo requests:</strong> Ask customers to share photos of their new flooring. Offer a $25 credit if they post on Google and tag you</li>
+                <li><strong>SMS campaign:</strong> Send 2 SMS messages (if customer opted in): one at day 7, one at day 14, asking for review</li>
+                <li><strong>Incentives:</strong> Offer a discount on future services for customers who leave 5-star reviews</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Critical:</strong> Respond to ALL reviews within 48 hours. For 5-star reviews, thank them and mention your portfolio. For 3-4 star reviews, address concerns and offer solutions. For 1-2 star reviews, respond professionally and ask to discuss offline. Google's algorithm rewards engagement.
+            </div>
+
+            <h3>Managing Negative Reviews</h3>
+            <ol>
+                <li>Don't ignore or get defensive</li>
+                <li>Respond within 24 hours acknowledging the issue</li>
+                <li>Offer a solution (touch-up, partial refund, re-installation)</li>
+                <li>Move to private communication</li>
+                <li>Document resolution and ask for review update</li>
+            </ol>
+
+            <h2>Building Local Citations for Flooring Contractors</h2>
+            <p>Citations are mentions of your business NAP (Name, Address, Phone) on external websites. They're a major ranking factor for local SEO.</p>
+
+            <h3>Priority Citation Sites for Flooring</h3>
+            <ul>
+                <li><strong>Google Business Profile</strong> (most important)</li>
+                <li><strong>Yelp</strong> (claim your listing, add high-quality photos)</li>
+                <li><strong>Better Business Bureau (BBB.org)</strong> (get A+ rating)</li>
+                <li><strong>HomeAdvisor</strong> (premium contractor directory)</li>
+                <li><strong>Angie's List</strong> (homeowner-focused reviews)</li>
+                <li><strong>The Carpet and Rug Institute</strong> (industry directory)</li>
+                <li><strong>Home improvement directories:</strong> Thumbtack, Houzz, NFIB, local chamber of commerce</li>
+                <li><strong>Local directories:</strong> Your city's business directory, Better Business Council</li>
+            </ul>
+
+            <h3>NAP Consistency Rules</h3>
+            <ul>
+                <li>Identical business name across all platforms (no variations)</li>
+                <li>Identical phone number (consistent format: (555) 123-4567)</li>
+                <li>Identical address (include suite number if applicable)</li>
+                <li>Update all citations within 48 hours of any address or phone change</li>
+            </ul>
+
+            <h2>Content Marketing Strategy for Flooring Companies</h2>
+            <p>Beyond your GBP and citations, you need a website that ranks for informational keywords and educates customers throughout their buying journey.</p>
+
+            <h3>Content Pillars to Publish</h3>
+            <ul>
+                <li><strong>Material guides:</strong> "Hardwood vs. laminate flooring: Complete comparison for homeowners"</li>
+                <li><strong>Installation guides:</strong> "How hardwood flooring installation works" (builds trust in your process)</li>
+                <li><strong>Maintenance guides:</strong> "How to care for hardwood floors" (establishes authority, keeps customers coming back)</li>
+                <li><strong>Cost guides:</strong> "Hardwood flooring installation costs in [city] (2026 pricing guide)"</li>
+                <li><strong>Problem solutions:</strong> "Water-damaged hardwood floors: Can they be repaired?" (high-intent problem-solving)</li>
+                <li><strong>Location pages:</strong> Individual pages for neighborhoods/suburbs you serve</li>
+                <li><strong>Before/after case studies:</strong> Detailed blog post for major projects with photos and customer testimonial</li>
+            </ul>
+
+            <h3>Publishing Schedule</h3>
+            <p>Publish 1-3 times monthly. Quality and consistency matter more than volume. A blog with 20 high-quality posts will rank better than 100 thin, keyword-stuffed posts.</p>
+
+            <h2>Technical SEO Must-Haves for Flooring Websites</h2>
+            <p>Your website's technical foundation determines whether content even ranks.</p>
+
+            <h3>Core Technical Requirements</h3>
+            <ul>
+                <li><strong>Mobile responsiveness:</strong> 65% of flooring searches happen on mobile. Your site MUST look perfect on phones</li>
+                <li><strong>Page speed:</strong> Use Google PageSpeed Insights. Target 75+ on mobile. Compress images, enable caching</li>
+                <li><strong>Local schema markup:</strong> Implement LocalBusiness schema with your address, phone, hours, and services</li>
+                <li><strong>Image optimization:</strong> Flooring is visual. Optimize photos with alt text: "ABC Hardwood Flooring - Cherry hardwood installation in [city]"</li>
+                <li><strong>Before/after galleries:</strong> Use structured data to mark up image galleries</li>
+                <li><strong>Google Search Console:</strong> Claim your site, submit XML sitemap, monitor performance</li>
+                <li><strong>Core Web Vitals:</strong> Optimize LCP, FID, CLS. Google ranks sites with good Core Web Vitals higher</li>
+            </ul>
+
+            <h2>Common SEO Mistakes Flooring Companies Make</h2>
+
+            <h3>Mistake #1: Outdated Photos</h3>
+            <p>Using the same 5 photos for 3 years tells customers you're not active. Update your GBP and website with new projects monthly. Fresh photos signal to Google that your business is active.</p>
+
+            <h3>Mistake #2: Inconsistent NAP Data</h3>
+            <p>If your address is "123 Main St" on your website, "123 Main Street" on GBP, and "123 Main Street, Suite 1" on Yelp, Google sees these as different businesses. This splits ranking signals and kills your visibility.</p>
+
+            <h3>Mistake #3: Ignoring Customer Reviews</h3>
+            <p>Flooring projects involve 4-8 week decision cycles and customer comparison. High reviews directly increase conversion. Businesses with 4.7+ stars get 3x more qualified leads than those with 3.5 stars.</p>
+
+            <h3>Mistake #4: No Location Pages</h3>
+            <p>Creating one generic "service areas" page doesn't rank. You need specific pages for Brookline, Cambridge, Somerville, etc. with local content, testimonials, and service details unique to each area.</p>
+
+            <h3>Mistake #5: Neglecting Video Content</h3>
+            <p>Video is Google's favorite content format. A 30-second installation time-lapse or before/after transformation video will generate 5-10x more engagement than text alone. YouTube videos also appear in local results.</p>
+
+            <h2>Your 60-Day Flooring SEO Action Plan</h2>
+
+            <h3>Week 1-2: GBP Optimization</h3>
+            <ul>
+                <li>Audit your Google Business Profile. Add 15 new high-quality project photos</li>
+                <li>Claim profiles on Yelp, BBB, HomeAdvisor, and Angie's List</li>
+                <li>Check NAP consistency across all 10+ citation sites. Fix discrepancies immediately</li>
+            </ul>
+
+            <h3>Week 3-4: Review Building</h3>
+            <ul>
+                <li>Design and print physical review request cards</li>
+                <li>Create email and SMS review request templates</li>
+                <li>Contact 30 past customers asking for reviews</li>
+                <li>Set up automated review request follow-up 1 week post-installation</li>
+            </ul>
+
+            <h3>Week 5-6: Content & Technical</h3>
+            <ul>
+                <li>Publish 2 blog posts (e.g., "Hardwood vs. Laminate Flooring Comparison")</li>
+                <li>Audit site speed with Google PageSpeed Insights. Optimize images</li>
+                <li>Add LocalBusiness schema to homepage</li>
+                <li>Record 2-3 before/after installation videos (15-30 seconds each)</li>
+            </ul>
+
+            <h3>Week 7-8: Expansion</h3>
+            <ul>
+                <li>Create location pages for top 5 neighborhoods you serve</li>
+                <li>Post 6 GBP updates with project photos and tips</li>
+                <li>Respond to all recent reviews with thoughtful, detailed responses</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Expected Results (90 Days):</strong>
+                <ul style="margin-top: 0.5rem;">
+                    <li>+20-30 new reviews (average 4.6+ stars)</li>
+                    <li>+30-40% increase in GBP impressions</li>
+                    <li>Top 3 ranking for 5-8 service keywords in your city</li>
+                    <li>+25-35% increase in website traffic from local search</li>
+                    <li>+40-50% increase in quote request volume</li>
+                </ul>
+            </div>
+
+            <h2>Your Competitive Advantage</h2>
+            <p>Most flooring companies ignore local SEO. They rely on referrals, yellow pages advertising, and door-to-door canvassing. This leaves enormous opportunity.</p>
+
+            <p>The flooring companies winning right now are the ones treating SEO systematically: optimizing their GBP weekly, building reviews consistently, publishing educational content, and monitoring their rankings. These businesses are capturing 30-50% more quote requests and growing their revenue by 15-25% annually.</p>
+
+            <p>If you're ready to dominate your local flooring market and stop leaving money on the table, we can help. Our proven strategy has helped dozens of flooring contractors go from 2-3 stars to 4.7+ stars, from 5-10 monthly quotes to 20-30 monthly quotes, and from flat revenue to 20-30% year-over-year growth.</p>
+
+            <p><strong>Book a consultation with our team today.</strong> We'll audit your online presence, identify your biggest opportunities, and create a custom roadmap to dominate flooring search in your market.</p>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services.html#local-seo">Local SEO</a></li>
+                        <li><a href="/services.html#gbp">Google Business Profile</a></li>
+                        <li><a href="/services.html#on-page">On-Page SEO</a></li>
+                        <li><a href="/services.html#technical">Technical SEO</a></li>
+                        <li><a href="/services.html#audit">SEO Audit</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Top Cities</h4>
+                    <ul>
+                        <li><a href="/cities.html#new-york">New York</a></li>
+                        <li><a href="/cities.html#los-angeles">Los Angeles</a></li>
+                        <li><a href="/cities.html#houston">Houston</a></li>
+                        <li><a href="/cities.html#phoenix">Phoenix</a></li>
+                        <li><a href="/cities.html">All Cities</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/case-studies.html">Case Studies</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p><strong>Phone:</strong> <a href="tel:+16036058532">(603) 605-8532</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:alex@teamrankrise.com">alex@teamrankrise.com</a></p>
+                        <p style="margin-top: 1rem;">Available for consultation Monday–Friday, 9 AM–5 PM EST</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 RankRise SEO. All rights reserved. Local SEO strategies that drive results.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
